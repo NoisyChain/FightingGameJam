@@ -1,41 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://pxkjbr2u1iui"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_gx0je"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_0wwoe"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_gwaqb"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_usi1p"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="5_ufdwk"]
-
-[sub_resource type="Resource" id="Resource_vl4jm"]
-script = ExtResource("1_gx0je")
-SourceAnimation = "Blockstun_Neutral"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="1"]
-script = ExtResource("2_0wwoe")
-
-[sub_resource type="Resource" id="5"]
-script = ExtResource("4_usi1p")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-
-[sub_resource type="Resource" id="Resource_ufqun"]
-script = ExtResource("5_ufdwk")
-StateIndex = 35
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_gwaqb"]
 
 [resource]
 script = ExtResource("3_gwaqb")
-StateName = "Blockstun_Neutral"
-Type = 3
-Duration = 8
-HitStunFrameLimit = 4
-stateProperties = []
-statePhysics = [SubResource("5")]
-hitboxStates = [SubResource("1")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_ufqun")]
-animationSettings = [SubResource("Resource_vl4jm")]
-AIFlags = 322
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

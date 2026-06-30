@@ -1,31 +1,9 @@
 [gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://dq24dprebx5my"]
 
-[ext_resource type="Script" uid="uid://dh03r2nvy3pmu" path="res://Scripts/SakugaEngine/Resources/ExtraVariableChange.cs" id="1_tggyl"]
-[ext_resource type="Resource" uid="uid://diuo4je084p3s" path="res://Fighters/Shared/Inputs/4_Input_9.tres" id="2_af6p2"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="3_dpe8s"]
-
-[sub_resource type="Resource" id="Resource_ftr5y"]
-script = ExtResource("1_tggyl")
-
-[sub_resource type="Resource" id="Resource_7mou8"]
-script = ExtResource("1_tggyl")
-
-[sub_resource type="Resource" id="Resource_gr7r5"]
-script = ExtResource("1_tggyl")
-ChangeValue = 1
 
 [resource]
 script = ExtResource("3_dpe8s")
-MoveName = "Dash Jump"
-MoveState = 6
-Inputs = ExtResource("2_af6p2")
-Priority = 3
-DistanceArea = Vector2i(0, 99999)
-IsSequenceFromStates = PackedInt32Array(13)
-CanCancelTo = []
-ExtraVariablesRequirement = []
-ExtraVariablesChange = [SubResource("Resource_ftr5y"), SubResource("Resource_7mou8"), SubResource("Resource_gr7r5")]
-CanBeOverrided = true
-PriorityBuffer = true
-AcceptNullStates = true
-UseOnGround = true
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null

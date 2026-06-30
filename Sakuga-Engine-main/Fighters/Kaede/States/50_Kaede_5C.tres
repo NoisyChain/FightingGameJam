@@ -1,89 +1,69 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://c4h470mmhnes4"]
 
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
-[ext_resource type="Script" uid="uid://bx8e460frmhfd" path="res://Scripts/SakugaEngine/Resources/Animation Events/SuperArmorAnimationEvent.cs" id="1_myh1j"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2"]
-[ext_resource type="Script" uid="uid://bwm15ys7iwmfc" path="res://Scripts/SakugaEngine/Resources/AnimationEventsList.cs" id="2_dlo0l"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="3"]
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="3_3rgdk"]
-[ext_resource type="Script" uid="uid://gkg7v04bkm2y" path="res://Scripts/SakugaEngine/Resources/Animation Events/SpawnObjectAnimationEvent.cs" id="3_i24ac"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="4_w2dw3"]
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
+[ext_resource type="Resource" uid="uid://cdvqqmfm1sqqg" path="res://Fighters/Kaede/AnimationData/50_Kaede_5C_AnimData.tres" id="1_i24ac"]
+[ext_resource type="Resource" uid="uid://nvkiyhr0b8sx" path="res://Fighters/Kaede/FrameDataEvents/Template_Trans_Idle.tres" id="2_8ovxb"]
+[ext_resource type="Script" uid="uid://bgwrlqrhqb2a4" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/MoveXAction.cs" id="2_n4hul"]
+[ext_resource type="Script" uid="uid://n7xih8pqfpwo" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/ChangeSideAction.cs" id="2_qv63u"]
+[ext_resource type="Script" uid="uid://bw1835rb2hj7y" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/MoveYAction.cs" id="3_qv63u"]
+[ext_resource type="Script" uid="uid://c42r1mjvviuhg" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Conditions/AtFrameRangeCondition.cs" id="4_ritnm"]
+[ext_resource type="Script" uid="uid://c076jc3huncn2" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/FrameDataEvent.cs" id="5_g4pmr"]
 
-[sub_resource type="Resource" id="Resource_fi3yh"]
-script = ExtResource("1_myh1j")
-ArmorValue = 3
+[sub_resource type="Resource" id="Resource_uhin5"]
+script = ExtResource("2_qv63u")
+metadata/_custom_type_script = "uid://n7xih8pqfpwo"
 
-[sub_resource type="Resource" id="Resource_ix1su"]
-script = ExtResource("2_dlo0l")
-Events = [SubResource("Resource_fi3yh")]
+[sub_resource type="Resource" id="Resource_q8i2b"]
+script = ExtResource("5_g4pmr")
+Conditions = null
+Actions = Array[Object]([SubResource("Resource_uhin5")])
+metadata/_custom_type_script = "uid://c076jc3huncn2"
 
-[sub_resource type="Resource" id="Resource_tmsc3"]
-script = ExtResource("1_myh1j")
+[sub_resource type="Resource" id="Resource_0358y"]
+script = ExtResource("2_n4hul")
+Velocity = 30000
+metadata/_custom_type_script = "uid://bgwrlqrhqb2a4"
 
-[sub_resource type="Resource" id="Resource_mq13r"]
-script = ExtResource("2_dlo0l")
-Frame = 16
-Events = [SubResource("Resource_tmsc3")]
+[sub_resource type="Resource" id="Resource_1tn80"]
+script = ExtResource("3_qv63u")
+metadata/_custom_type_script = "uid://bw1835rb2hj7y"
 
-[sub_resource type="Resource" id="Resource_8ovxb"]
-script = ExtResource("3_i24ac")
-metadata/_custom_type_script = "uid://gkg7v04bkm2y"
+[sub_resource type="Resource" id="Resource_yi0s3"]
+script = ExtResource("4_ritnm")
+MaxFrame = 15
+metadata/_custom_type_script = "uid://c42r1mjvviuhg"
 
-[sub_resource type="Resource" id="Resource_bnj4d"]
-script = ExtResource("2_dlo0l")
-Events = [SubResource("Resource_8ovxb")]
-metadata/_custom_type_script = "uid://bwm15ys7iwmfc"
+[sub_resource type="Resource" id="Resource_wfccg"]
+script = ExtResource("5_g4pmr")
+Conditions = Array[Object]([SubResource("Resource_yi0s3")])
+Actions = Array[Object]([SubResource("Resource_0358y"), SubResource("Resource_1tn80")])
+metadata/_custom_type_script = "uid://c076jc3huncn2"
 
-[sub_resource type="Resource" id="Resource_i24ac"]
-script = ExtResource("3_3rgdk")
-SourceAnimation = "5C"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
+[sub_resource type="Resource" id="Resource_fmily"]
+script = ExtResource("2_n4hul")
+metadata/_custom_type_script = "uid://bgwrlqrhqb2a4"
 
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2")
-HitboxIndex = 5
+[sub_resource type="Resource" id="Resource_e3r4e"]
+script = ExtResource("4_ritnm")
+MinFrame = 16
+MaxFrame = 39
+metadata/_custom_type_script = "uid://c42r1mjvviuhg"
 
-[sub_resource type="Resource" id="3"]
-script = ExtResource("2")
-animationStage = 1
-Frame = 18
-HitboxIndex = 8
-
-[sub_resource type="Resource" id="4"]
-script = ExtResource("2")
-animationStage = 2
-Frame = 22
-
-[sub_resource type="Resource" id="5"]
-script = ExtResource("3")
-UseLateralSpeed = true
-LateralSpeed = 30000
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="6"]
-script = ExtResource("3")
-Frame = 16
-UseLateralSpeed = true
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="Resource_6gdsy"]
-script = ExtResource("4_w2dw3")
-StateIndex = 0
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
+[sub_resource type="Resource" id="Resource_om0dl"]
+script = ExtResource("5_g4pmr")
+Conditions = Array[Object]([SubResource("Resource_e3r4e")])
+Actions = Array[Object]([SubResource("Resource_fmily")])
+metadata/_custom_type_script = "uid://c076jc3huncn2"
 
 [resource]
 script = ExtResource("1")
 StateName = "5C"
 Type = 2
-Duration = 40
-stateProperties = []
-statePhysics = [SubResource("5"), SubResource("6")]
-hitboxStates = [SubResource("2"), SubResource("3"), SubResource("4")]
-animationEvents = [SubResource("Resource_ix1su"), SubResource("Resource_mq13r"), SubResource("Resource_bnj4d")]
-throwPivot = []
-stateTransitions = [SubResource("Resource_6gdsy")]
-animationSettings = [SubResource("Resource_i24ac")]
+AnimationData = ExtResource("1_i24ac")
+TransitionEvents = Array[Object]([ExtResource("2_8ovxb")])
+OnEnterEvents = Array[Object]([SubResource("Resource_q8i2b")])
+OnTickEvents = Array[Object]([SubResource("Resource_wfccg"), SubResource("Resource_om0dl")])
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 18

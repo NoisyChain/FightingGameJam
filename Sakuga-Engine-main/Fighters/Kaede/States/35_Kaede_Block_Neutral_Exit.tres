@@ -1,39 +1,17 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://c2ebq2igw582c"]
 
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_bbrh6"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="3"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="4_rwq51"]
-
-[sub_resource type="Resource" id="Resource_5l4jf"]
-script = ExtResource("1_bbrh6")
-SourceAnimation = "Block_Neutral_Exit"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="1"]
-script = ExtResource("2")
-
-[sub_resource type="Resource" id="5"]
-script = ExtResource("3")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-
-[sub_resource type="Resource" id="Resource_1u06w"]
-script = ExtResource("4_rwq51")
-StateIndex = 0
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
+[ext_resource type="Resource" uid="uid://3r8rf1v54h6x" path="res://Fighters/Kaede/AnimationData/38_Kaede_Block_Neutral_Exit_AnimData.tres" id="1_5l4jf"]
+[ext_resource type="Resource" uid="uid://nvkiyhr0b8sx" path="res://Fighters/Kaede/FrameDataEvents/Template_Trans_Idle.tres" id="2_4tjp5"]
 
 [resource]
 script = ExtResource("1")
 StateName = "Block_Neutral_Exit"
-Duration = 6
-stateProperties = []
-statePhysics = [SubResource("5")]
-hitboxStates = [SubResource("1")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_1u06w")]
-animationSettings = [SubResource("Resource_5l4jf")]
+AnimationData = ExtResource("1_5l4jf")
+TransitionEvents = Array[Object]([ExtResource("2_4tjp5")])
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 1

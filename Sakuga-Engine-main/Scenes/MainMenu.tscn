@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dn8hnj6b1vxko"]
 
-[ext_resource type="Script" uid="uid://dp1nb1ldvfdi0" path="res://Scripts/SakugaEngine/UI/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://c2l2206ftntd2" path="res://Scripts/SakugaEngine/UI/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://dy2al5lgj2g36" path="res://Scripts/SakugaEngine/UI/MainMenuManager.cs" id="1_yxkem"]
 [ext_resource type="Resource" uid="uid://c320twmibeytx" path="res://MatchSettings.tres" id="2_853f1"]
 [ext_resource type="AudioStream" uid="uid://b7ko61ulearbo" path="res://Songs/Opened Eyes.ogg" id="3_8saeu"]
 [ext_resource type="FontFile" uid="uid://cu0i5xdymo0ou" path="res://Tw Cen MT Condensed Medium.ttf" id="3_ghw46"]
@@ -11,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://hmh3cuqrb6od" path="res://Backgrounds/MainMenuIcon.png" id="6_7467j"]
 [ext_resource type="Texture2D" uid="uid://c1hvwaimshwy2" path="res://Sprites/Keyboard1.png" id="6_if7li"]
 [ext_resource type="Texture2D" uid="uid://2o14nodmbf64" path="res://Sprites/Keyboard2.png" id="7_rrcx7"]
+[ext_resource type="Script" uid="uid://by5fmdkhxe7ar" path="res://Scripts/SakugaEngine/UI/MatchSettingsMenu.cs" id="8_7v4os"]
 [ext_resource type="Texture2D" uid="uid://3y7g2u58ux53" path="res://Sprites/Controller1.png" id="8_fh7cp"]
 [ext_resource type="Texture2D" uid="uid://bbe5bso3kl75w" path="res://Sprites/Controller2.png" id="9_8e205"]
+[ext_resource type="Script" uid="uid://mxcelgrlkj2f" path="res://Scripts/SakugaEngine/UI/InputSelectMenu.cs" id="9_pjscj"]
 [ext_resource type="Texture2D" uid="uid://brmg2ywuhuocx" path="res://Backgrounds/BackgroundOverlay.png" id="13_8e205"]
 [ext_resource type="Texture2D" uid="uid://7ed10bx1ok04" path="res://Backgrounds/BackgroundBar.png" id="14_7467j"]
 
@@ -28,7 +31,7 @@ shader_parameter/intensity = 1.0
 shader = ExtResource("5_loo7a")
 shader_parameter/intensity = 1.0
 
-[node name="Control" type="Control" unique_id=626625648 node_paths=PackedStringArray("firstButton", "InputSelectMenu", "DeviceWidgetKeyboard1", "DeviceWidgetKeyboard2", "DeviceWidgetController1", "DeviceWidgetController2", "PivotP1", "PivotP2")]
+[node name="Control" type="Control" unique_id=626625648 node_paths=PackedStringArray("mainMenu", "inputMenu", "matchMenu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,24 +39,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(943, -251)
-script = ExtResource("1_tt5f1")
-firstButton = NodePath("MainMenu/VBoxContainer/Button_Online")
+script = ExtResource("1_yxkem")
 matchSettings = ExtResource("2_853f1")
-InputSelectMenu = NodePath("InputSelection")
-DeviceWidgetKeyboard1 = NodePath("InputSelection/Widget_Key1")
-DeviceWidgetKeyboard2 = NodePath("InputSelection/Widget_Key2")
-DeviceWidgetController1 = NodePath("InputSelection/Widget_Joy1")
-DeviceWidgetController2 = NodePath("InputSelection/Widget_Joy2")
-PivotP1 = NodePath("InputSelection/Pivot_P1")
-PivotP2 = NodePath("InputSelection/Pivot_P2")
+mainMenu = NodePath("MainMenu")
+inputMenu = NodePath("InputSelection")
+matchMenu = NodePath("MatchSettings")
 
-[node name="MainMenu" type="Control" parent="." unique_id=599429111]
+[node name="MainMenu" type="Control" parent="." unique_id=599429111 node_paths=PackedStringArray("Manager", "firstButton")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tt5f1")
+Manager = NodePath("..")
+firstButton = NodePath("VBoxContainer/Button_Versus")
 
 [node name="Title" type="TextureRect" parent="MainMenu" unique_id=1411088876]
 layout_mode = 1
@@ -172,7 +173,7 @@ theme_override_constants/outline_size = 5
 text = "QUIT"
 alignment = 0
 
-[node name="InputSelection" type="Control" parent="." unique_id=1429820253]
+[node name="MatchSettings" type="Control" parent="." unique_id=1246274155 node_paths=PackedStringArray("Manager", "firstButton", "TimeLimitOp", "RoundsOp", "BotDiffOp", "PauseModeOp")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -180,6 +181,271 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_7v4os")
+Manager = NodePath("..")
+firstButton = NodePath("Control/Button_TimeLimit")
+TimeLimitOp = NodePath("Control/Button_TimeLimit")
+RoundsOp = NodePath("Control/Button_RoundsToWin")
+BotDiffOp = NodePath("Control/Button_BotDiff")
+PauseModeOp = NodePath("Control/Button_PauseMode")
+
+[node name="Control" type="Control" parent="MatchSettings" unique_id=1302469919]
+layout_mode = 1
+anchor_left = 0.202
+anchor_top = 0.19600001
+anchor_right = 0.79800004
+anchor_bottom = 0.804
+offset_left = -0.55999756
+offset_top = -0.120010376
+offset_right = 0.5599365
+offset_bottom = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MatchSettings/Control" unique_id=33874291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5372549)
+
+[node name="Title" type="Label" parent="MatchSettings/Control" unique_id=1023938785]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.0
+offset_right = 382.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Match Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_TimeLimit" type="Label" parent="MatchSettings/Control" unique_id=2052394635]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -90.0
+offset_right = -23.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time Limit"
+vertical_alignment = 1
+
+[node name="Label_Rounds" type="Label" parent="MatchSettings/Control" unique_id=2095459247]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -38.0
+offset_right = -23.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Rounds To win"
+vertical_alignment = 1
+
+[node name="Label_BotDiff" type="Label" parent="MatchSettings/Control" unique_id=511654954]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 14.0
+offset_right = -23.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CPU Difficulty"
+vertical_alignment = 1
+
+[node name="Label_PauseMode" type="Label" parent="MatchSettings/Control" unique_id=1164892399]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 63.0
+offset_right = -23.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pause Mode"
+vertical_alignment = 1
+
+[node name="Button_TimeLimit" type="OptionButton" parent="MatchSettings/Control" unique_id=85617698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -90.0
+offset_right = 188.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+selected = 0
+item_count = 7
+popup/item_0/text = "99"
+popup/item_0/id = 0
+popup/item_1/text = "90"
+popup/item_1/id = 1
+popup/item_2/text = "60"
+popup/item_2/id = 2
+popup/item_3/text = "30"
+popup/item_3/id = 3
+popup/item_4/text = "20"
+popup/item_4/id = 4
+popup/item_5/text = "10"
+popup/item_5/id = 5
+popup/item_6/text = "Unlimited"
+popup/item_6/id = 6
+
+[node name="Button_RoundsToWin" type="OptionButton" parent="MatchSettings/Control" unique_id=221079668]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = -38.0
+offset_right = 187.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+selected = 1
+item_count = 5
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
+popup/item_2/text = "3"
+popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
+popup/item_4/text = "5"
+popup/item_4/id = 4
+
+[node name="Button_BotDiff" type="OptionButton" parent="MatchSettings/Control" unique_id=320467601]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = 14.0
+offset_right = 188.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+selected = 2
+item_count = 6
+popup/item_0/text = "Beginner"
+popup/item_0/id = 0
+popup/item_1/text = "Easy"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "Hard"
+popup/item_3/id = 3
+popup/item_4/text = "Very Hard"
+popup/item_4/id = 4
+popup/item_5/text = "Pro"
+popup/item_5/id = 5
+
+[node name="Button_PauseMode" type="OptionButton" parent="MatchSettings/Control" unique_id=864479447]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = 63.0
+offset_right = 188.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../Button_Go")
+selected = 1
+item_count = 3
+popup/item_0/text = "Press"
+popup/item_0/id = 0
+popup/item_1/text = "Hold"
+popup/item_1/id = 1
+popup/item_2/text = "Not Allowed"
+popup/item_2/id = 2
+
+[node name="Button_Go" type="Button" parent="MatchSettings/Control" unique_id=475599596]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -83.0
+offset_right = -29.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Confirm
+"
+
+[node name="Button_Back" type="Button" parent="MatchSettings/Control" unique_id=61537642]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -83.0
+offset_right = 177.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Cancel
+"
+
+[node name="InputSelection" type="Control" parent="." unique_id=1429820253 node_paths=PackedStringArray("Manager", "DeviceWidgetKeyboard1", "DeviceWidgetKeyboard2", "DeviceWidgetController1", "DeviceWidgetController2", "PivotP1", "PivotP2")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_pjscj")
+Manager = NodePath("..")
+DeviceWidgetKeyboard1 = NodePath("Widget_Key1")
+DeviceWidgetKeyboard2 = NodePath("Widget_Key2")
+DeviceWidgetController1 = NodePath("Widget_Joy1")
+DeviceWidgetController2 = NodePath("Widget_Joy2")
+PivotP1 = NodePath("Pivot_P1")
+PivotP2 = NodePath("Pivot_P2")
 
 [node name="Background" type="TextureRect" parent="InputSelection" unique_id=2069799207]
 z_index = 1
@@ -566,9 +832,11 @@ offset_bottom = 720.0
 texture = ExtResource("5_df05h")
 expand_mode = 1
 
-[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Online" to="." method="_OnOnlineButtonPressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Arcade" to="." method="_OnArcadeButtonPressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Versus" to="." method="_OnVersusButtonPressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Training" to="." method="_OnTrainingButtonPressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Replay" to="." method="_OnReplayButtonPressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Quit" to="." method="_OnQuitButtonPressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Online" to="MainMenu" method="_OnOnlineButtonPressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Arcade" to="MainMenu" method="_OnArcadeButtonPressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Versus" to="MainMenu" method="_OnVersusButtonPressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Training" to="MainMenu" method="_OnTrainingButtonPressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Replay" to="MainMenu" method="_OnReplayButtonPressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Button_Quit" to="MainMenu" method="_OnQuitButtonPressed"]
+[connection signal="pressed" from="MatchSettings/Control/Button_Go" to="MatchSettings" method="_OnGoButtonPressed"]
+[connection signal="pressed" from="MatchSettings/Control/Button_Back" to="MatchSettings" method="_OnBackButtonPressed"]

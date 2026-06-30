@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0y740kryylcs" path="res://Scripts/SakugaEngine/Resources/HitboxElement.cs" id="1_1ev0h"]
 [ext_resource type="Script" uid="uid://dxuwyhds75mce" path="res://Scripts/SakugaEngine/Resources/HitboxSettings.cs" id="2_6yt6f"]
+[ext_resource type="Resource" uid="uid://cu1ufqx7n6ab6" path="res://Fighters/Shared/HitboxPresets/Pushbox_Crouch.tres" id="2_vhmd7"]
 
 [sub_resource type="Resource" id="Resource_whmeu"]
 script = ExtResource("1_1ev0h")
@@ -12,15 +13,12 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_24boc"]
 script = ExtResource("1_1ev0h")
@@ -31,15 +29,12 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_igg1m"]
 script = ExtResource("1_1ev0h")
@@ -51,15 +46,12 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_aqr4w"]
 script = ExtResource("1_1ev0h")
@@ -80,6 +72,5 @@ AirBlockstun = 14
 
 [resource]
 script = ExtResource("2_6yt6f")
-PushboxCenter = Vector2i(0, 3000)
-PushboxSize = Vector2i(4000, 6000)
+Pushbox = ExtResource("2_vhmd7")
 Hitboxes = [SubResource("Resource_whmeu"), SubResource("Resource_24boc"), SubResource("Resource_igg1m"), SubResource("Resource_aqr4w")]

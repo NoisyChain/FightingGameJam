@@ -1,55 +1,9 @@
 [gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://gy72agx3au5g"]
 
-[ext_resource type="Script" uid="uid://dpgs1fcn5u351" path="res://Scripts/SakugaEngine/Resources/MoveCancelSettings.cs" id="1_crcv4"]
-[ext_resource type="Resource" uid="uid://cjtxv3hfn8vc4" path="res://Fighters/Shared/Inputs/8_Input_]2[.tres" id="2_jbyu5"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="3_couso"]
-
-[sub_resource type="Resource" id="Resource_sjv4h"]
-script = ExtResource("1_crcv4")
-Conditions = 1
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_encta"]
-script = ExtResource("1_crcv4")
-MoveIndex = 1
-Conditions = 1
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_ia6ow"]
-script = ExtResource("1_crcv4")
-MoveIndex = 4
-Conditions = 1
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_1kyce"]
-script = ExtResource("1_crcv4")
-MoveIndex = 5
-Conditions = 1
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_4g8ww"]
-script = ExtResource("1_crcv4")
-MoveIndex = 6
-Conditions = 1
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
 
 [resource]
 script = ExtResource("3_couso")
-MoveName = "Uncrouching"
-MoveState = 8
-Inputs = ExtResource("2_jbyu5")
-SideChange = 1
-IsSequenceFromStates = PackedInt32Array(11, 12)
-CanCancelTo = [SubResource("Resource_sjv4h"), SubResource("Resource_encta"), SubResource("Resource_ia6ow"), SubResource("Resource_1kyce"), SubResource("Resource_4g8ww")]
-ExtraVariablesRequirement = []
-ExtraVariablesChange = []
-CanBeOverrided = true
-CanOverrideToSelf = true
-PriorityBuffer = true
-IgnoreSamePriority = false
-UseOnGround = true
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null

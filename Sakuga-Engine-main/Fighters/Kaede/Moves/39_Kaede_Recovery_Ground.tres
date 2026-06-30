@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://cv1xrjryf27gp"]
+
+[ext_resource type="Resource" uid="uid://c6x3ahrknltf1" path="res://Fighters/Shared/Inputs/26_Input_5X.tres" id="1_j2ce6"]
+[ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="2_hwuey"]
+
+[resource]
+script = ExtResource("2_hwuey")
+MoveName = "Ground Recovery"
+MoveState = 71
+Inputs = ExtResource("1_j2ce6")
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null
+PriorityBuffer = true
+AcceptMovementStates = false
+AcceptHitReactionStates = true
+IgnoreKnockdownHits = true
+UseOnGround = true

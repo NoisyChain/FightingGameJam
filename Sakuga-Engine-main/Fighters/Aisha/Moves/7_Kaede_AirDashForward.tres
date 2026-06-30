@@ -1,41 +1,9 @@
 [gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://c26mss8a1fjph"]
 
-[ext_resource type="Script" uid="uid://dh03r2nvy3pmu" path="res://Scripts/SakugaEngine/Resources/ExtraVariableChange.cs" id="1_nm1gq"]
-[ext_resource type="Script" uid="uid://cuch5yr7c7dag" path="res://Scripts/SakugaEngine/Resources/ExtraVariableCondition.cs" id="2_1bnt1"]
-[ext_resource type="Resource" uid="uid://cgu3jrjka1a8d" path="res://Fighters/Shared/Inputs/9_Input_66.tres" id="3_7f7se"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="4_hrhk2"]
-
-[sub_resource type="Resource" id="Resource_q3ycg"]
-script = ExtResource("1_nm1gq")
-ChangeMode = 1
-ChangeValue = 1
-
-[sub_resource type="Resource" id="Resource_5yot0"]
-script = ExtResource("1_nm1gq")
-ChangeMode = 1
-ChangeValue = 1
-
-[sub_resource type="Resource" id="Resource_4o5yg"]
-script = ExtResource("1_nm1gq")
-
-[sub_resource type="Resource" id="Resource_xhdh4"]
-script = ExtResource("2_1bnt1")
-Value = 1
-CompareMode = 3
-
-[sub_resource type="Resource" id="Resource_q3i0w"]
-script = ExtResource("2_1bnt1")
-Value = 1
-CompareMode = 3
 
 [resource]
 script = ExtResource("4_hrhk2")
-MoveName = "Forward Air Dash"
-MoveState = 15
-Inputs = ExtResource("3_7f7se")
-Priority = 4
-DistanceArea = Vector2i(0, 99999)
-CanCancelTo = []
-ExtraVariablesRequirement = [SubResource("Resource_xhdh4"), SubResource("Resource_q3i0w")]
-ExtraVariablesChange = [SubResource("Resource_q3ycg"), SubResource("Resource_5yot0"), SubResource("Resource_4o5yg")]
-UseOnAir = true
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null

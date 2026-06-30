@@ -11,12 +11,8 @@ AirBlockKnockbackGravity = 300000
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [resource]
 script = ExtResource("1_7s4vp")
-PushboxCenter = Vector2i(0, 6000)
-PushboxSize = Vector2i(6000, 12000)
 Hitboxes = [SubResource("Resource_tm223")]

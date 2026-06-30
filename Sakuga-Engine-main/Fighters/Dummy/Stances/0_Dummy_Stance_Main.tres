@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="FighterStance" format=3 uid="uid://cjsr2weyqwopy"]
+[gd_resource type="Resource" script_class="FighterStance" load_steps=9 format=3 uid="uid://cjsr2weyqwopy"]
 
-[ext_resource type="Script" uid="uid://ddrvw4nom6hlu" path="res://Scripts/SakugaEngine/Resources/FighterStance.cs" id="1_55coc"]
+[ext_resource type="Script" uid="uid://00dse0vp38l7" path="res://Scripts/SakugaEngine/Resources/FighterStance.cs" id="1_55coc"]
 [ext_resource type="Resource" uid="uid://bq6rlhndqo3wp" path="res://Fighters/Dummy/Moves/0_Dummy_MoveF.tres" id="1_c1uqo"]
 [ext_resource type="Resource" uid="uid://blm0xqfd2tk0v" path="res://Fighters/Dummy/Moves/1_Dummy_MoveB.tres" id="2_3l7yh"]
 [ext_resource type="Resource" uid="uid://dnygtxtib12ur" path="res://Fighters/Dummy/Moves/2_Dummy_JumpN.tres" id="3_ph8w4"]
@@ -11,5 +11,18 @@
 
 [resource]
 script = ExtResource("1_55coc")
+IsDamagePersistent = false
+IsRoundPersistent = false
+NeutralState = 0
 Moves = Array[Object]([ExtResource("1_c1uqo"), ExtResource("2_3l7yh"), ExtResource("3_ph8w4"), ExtResource("4_12jwt"), ExtResource("5_pdmj4"), ExtResource("6_x058f"), ExtResource("7_ahvae")])
 HitReactions = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+GroundBlockInitialState = -1
+CrouchBlockInitialState = -1
+AirBlockInitialState = -1
+GroundForwardRecoveryState = -1
+GroundBackwardsRecoveryState = -1
+AirForwardRecoveryState = -1
+AirBackwardsRecoveryState = -1
+OffTheGroundRecoveryState = -1
+GroundThrowEscapeState = -1
+AirThrowEscapeState = -1

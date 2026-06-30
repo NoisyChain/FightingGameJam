@@ -1,40 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://be7twv7l0gcvb"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_blptn"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_6ghbr"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_tlnm5"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_hyogy"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="5_0tf0c"]
-
-[sub_resource type="Resource" id="Resource_mbk4p"]
-script = ExtResource("1_blptn")
-SourceAnimation = "Idle"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="Resource_uhee2"]
-script = ExtResource("2_6ghbr")
-
-[sub_resource type="Resource" id="Resource_3l6il"]
-script = ExtResource("4_hyogy")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="Resource_1k4x6"]
-script = ExtResource("5_0tf0c")
-StateIndex = 0
-Condition = 1
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_tlnm5"]
 
 [resource]
 script = ExtResource("3_tlnm5")
-StateName = "Idle"
-Type = 5
-Duration = 20
-stateProperties = []
-statePhysics = [SubResource("Resource_3l6il")]
-hitboxStates = [SubResource("Resource_uhee2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_1k4x6")]
-animationSettings = [SubResource("Resource_mbk4p")]
-AIFlags = 1
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

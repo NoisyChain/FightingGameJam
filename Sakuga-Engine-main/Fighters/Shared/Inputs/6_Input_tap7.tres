@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MotionInputs" format=3 uid="uid://bmg8pgc425utd"]
 
 [ext_resource type="Script" uid="uid://87xpa7lbksa8" path="res://Scripts/SakugaEngine/Resources/InputSequence.cs" id="1_grvii"]
-[ext_resource type="Script" uid="uid://dfht0pcq6fyxk" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="2_blcbs"]
+[ext_resource type="Script" uid="uid://di4jwsd3y2x8w" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="2_blcbs"]
 [ext_resource type="Script" uid="uid://ce6shsv0dij5v" path="res://Scripts/SakugaEngine/Resources/InputOption.cs" id="2_tsu76"]
 
 [sub_resource type="Resource" id="Resource_ifuqk"]
@@ -10,7 +10,7 @@ Directional = 10
 
 [sub_resource type="Resource" id="Resource_1kgrx"]
 script = ExtResource("2_tsu76")
-Inputs = [SubResource("Resource_ifuqk")]
+Inputs = Array[Object]([SubResource("Resource_ifuqk")])
 
 [sub_resource type="Resource" id="Resource_ffh1r"]
 script = ExtResource("1_grvii")
@@ -23,9 +23,9 @@ Directional = 8
 
 [sub_resource type="Resource" id="Resource_tp86r"]
 script = ExtResource("2_tsu76")
-Inputs = [SubResource("Resource_ffh1r"), SubResource("Resource_k2c0r")]
+Inputs = Array[Object]([SubResource("Resource_ffh1r"), SubResource("Resource_k2c0r")])
 
 [resource]
 script = ExtResource("2_blcbs")
-ValidInputs = [SubResource("Resource_1kgrx"), SubResource("Resource_tp86r")]
+ValidInputs = Array[Object]([SubResource("Resource_1kgrx"), SubResource("Resource_tp86r")])
 InputBuffer = 99999

@@ -1,28 +1,9 @@
 [gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://bo6nm5i8qktwh"]
 
-[ext_resource type="Script" uid="uid://dh03r2nvy3pmu" path="res://Scripts/SakugaEngine/Resources/ExtraVariableChange.cs" id="1_g81cq"]
-[ext_resource type="Resource" uid="uid://diuo4je084p3s" path="res://Fighters/Shared/Inputs/4_Input_9.tres" id="2_wo70r"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="3_hr358"]
-
-[sub_resource type="Resource" id="Resource_7a8kx"]
-script = ExtResource("1_g81cq")
-
-[sub_resource type="Resource" id="Resource_h8656"]
-script = ExtResource("1_g81cq")
-
-[sub_resource type="Resource" id="Resource_snvw5"]
-script = ExtResource("1_g81cq")
 
 [resource]
 script = ExtResource("3_hr358")
-MoveName = "Forward Jump"
-MoveState = 4
-Inputs = ExtResource("2_wo70r")
-Priority = 1
-CanCancelTo = []
-ExtraVariablesRequirement = []
-ExtraVariablesChange = [SubResource("Resource_7a8kx"), SubResource("Resource_h8656"), SubResource("Resource_snvw5")]
-CanBeOverrided = true
-InterruptCornerPushback = true
-AcceptCombatStates = true
-UseOnGround = true
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null

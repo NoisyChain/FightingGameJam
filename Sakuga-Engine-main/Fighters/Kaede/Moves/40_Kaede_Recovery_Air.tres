@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://dhxwyuitmqpdd"]
+
+[ext_resource type="Resource" uid="uid://c6x3ahrknltf1" path="res://Fighters/Shared/Inputs/26_Input_5X.tres" id="1_1wtge"]
+[ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="2_oniec"]
+
+[resource]
+script = ExtResource("2_oniec")
+MoveName = "Air Recovery"
+MoveState = 72
+Inputs = ExtResource("1_1wtge")
+Priority = 1
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null
+PriorityBuffer = true
+AcceptMovementStates = false
+AcceptHitReactionStates = true
+IgnoreKnockdownHits = true
+UseOnAir = true

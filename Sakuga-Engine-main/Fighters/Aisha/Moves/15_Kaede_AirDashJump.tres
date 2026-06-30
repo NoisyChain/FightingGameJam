@@ -1,45 +1,9 @@
 [gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://cq4lxeev8q18j"]
 
-[ext_resource type="Script" uid="uid://dh03r2nvy3pmu" path="res://Scripts/SakugaEngine/Resources/ExtraVariableChange.cs" id="1_kqx2w"]
-[ext_resource type="Script" uid="uid://cuch5yr7c7dag" path="res://Scripts/SakugaEngine/Resources/ExtraVariableCondition.cs" id="2_ejqcu"]
-[ext_resource type="Resource" uid="uid://b27cxpfq2cn4o" path="res://Fighters/Shared/Inputs/7_Input_tap9.tres" id="3_uuyms"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="4_gpubw"]
-
-[sub_resource type="Resource" id="Resource_v8oqo"]
-script = ExtResource("1_kqx2w")
-ChangeMode = 1
-ChangeValue = 1
-
-[sub_resource type="Resource" id="Resource_2fe54"]
-script = ExtResource("1_kqx2w")
-ChangeMode = 1
-ChangeValue = 1
-
-[sub_resource type="Resource" id="Resource_okgu1"]
-script = ExtResource("2_ejqcu")
-Value = 1
-CompareMode = 3
-
-[sub_resource type="Resource" id="Resource_vm235"]
-script = ExtResource("2_ejqcu")
-Value = 1
-CompareMode = 3
-
-[sub_resource type="Resource" id="Resource_o6eek"]
-script = ExtResource("2_ejqcu")
-Value = 1
 
 [resource]
 script = ExtResource("4_gpubw")
-MoveName = "Air Dash Jump"
-MoveState = 6
-Inputs = ExtResource("3_uuyms")
-Priority = 4
-DistanceArea = Vector2i(0, 99999)
-CanCancelTo = []
-ExtraVariablesRequirement = [SubResource("Resource_okgu1"), SubResource("Resource_vm235"), SubResource("Resource_o6eek")]
-ExtraVariablesChange = [SubResource("Resource_v8oqo"), SubResource("Resource_2fe54")]
-CanBeOverrided = true
-CanOverrideToSelf = true
-IgnoreSamePriority = false
-UseOnAir = true
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null

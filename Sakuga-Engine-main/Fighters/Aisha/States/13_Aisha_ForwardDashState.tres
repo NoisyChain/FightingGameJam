@@ -1,37 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://dpkgyw8nwtgw4"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_unrjd"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_ltf2p"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_xc3v6"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_k622s"]
-
-[sub_resource type="Resource" id="Resource_2b4ba"]
-script = ExtResource("1_unrjd")
-SourceAnimation = "Walk_Forward"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2_ltf2p")
-HitboxIndex = 3
-
-[sub_resource type="Resource" id="1"]
-script = ExtResource("4_k622s")
-UseLateralSpeed = true
-LateralSpeed = 40000
-UseVerticalSpeed = true
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_xc3v6"]
 
 [resource]
 script = ExtResource("3_xc3v6")
-StateName = "Dash_Forward"
-Type = 1
-Duration = 36
-Loop = true
-LoopFrames = Vector2i(0, 35)
-stateProperties = []
-statePhysics = [SubResource("1")]
-hitboxStates = [SubResource("2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = []
-animationSettings = [SubResource("Resource_2b4ba")]
-AIFlags = 10
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

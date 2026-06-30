@@ -1,41 +1,31 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://cesp20fmhggwp"]
 
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_365ji"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="3_s01im"]
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
+[ext_resource type="Resource" uid="uid://ci1jmmvhrw8jc" path="res://Fighters/Kaede/AnimationData/24_Kaede_Hit_Crouch_Weak_AnimData.tres" id="1_e8v5j"]
+[ext_resource type="Resource" uid="uid://bo710qx800303" path="res://Fighters/Kaede/FrameDataEvents/Template_Trans_Crouch.tres" id="2_66psg"]
+[ext_resource type="Script" uid="uid://bgwrlqrhqb2a4" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/MoveXAction.cs" id="2_eto3m"]
+[ext_resource type="Script" uid="uid://c076jc3huncn2" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/FrameDataEvent.cs" id="3_fljb2"]
 
-[sub_resource type="Resource" id="Resource_veg51"]
-script = ExtResource("1_365ji")
-SourceAnimation = "Hit_Crouch_Weak"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
+[sub_resource type="Resource" id="Resource_oxlu4"]
+script = ExtResource("2_eto3m")
+metadata/_custom_type_script = "uid://bgwrlqrhqb2a4"
 
-[sub_resource type="Resource" id="1"]
-script = ExtResource("2")
-HitboxIndex = 1
-
-[sub_resource type="Resource" id="Resource_gt84v"]
-script = ExtResource("3_s01im")
-StateIndex = 12
-Condition = 1
-
-[sub_resource type="Resource" id="Resource_knlo8"]
-script = ExtResource("3_s01im")
-StateIndex = 30
-Condition = 32
+[sub_resource type="Resource" id="Resource_wl28h"]
+script = ExtResource("3_fljb2")
+Conditions = null
+Actions = Array[Object]([SubResource("Resource_oxlu4")])
+metadata/_custom_type_script = "uid://c076jc3huncn2"
 
 [resource]
 script = ExtResource("1")
 StateName = "Hit_Crouch_Weak"
 BaseStance = 1
 Type = 4
-Duration = 8
-HitStunFrameLimit = 1
-stateProperties = []
-statePhysics = []
-hitboxStates = [SubResource("1")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_gt84v"), SubResource("Resource_knlo8")]
-animationSettings = [SubResource("Resource_veg51")]
+AnimationData = ExtResource("1_e8v5j")
+TransitionEvents = Array[Object]([ExtResource("2_66psg")])
+OnEnterEvents = null
+OnTickEvents = Array[Object]([SubResource("Resource_wl28h")])
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 34

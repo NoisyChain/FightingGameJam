@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://dleyoipqsmi1b"]
 
 [ext_resource type="Script" uid="uid://dpgs1fcn5u351" path="res://Scripts/SakugaEngine/Resources/MoveCancelSettings.cs" id="1_eatty"]
-[ext_resource type="Resource" uid="uid://d0wfxlb0qkmur" path="res://Fighters/Shared/Inputs/11_Input_5A.tres" id="2_eatty"]
+[ext_resource type="Resource" uid="uid://d0wfxlb0qkmur" path="res://Fighters/Shared/Inputs/11_Input_5A.tres" id="1_el463"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="2_fpbnc"]
 
 [sub_resource type="Resource" id="Resource_cpbnt"]
@@ -57,13 +57,14 @@ metadata/_custom_type_script = "uid://dpgs1fcn5u351"
 script = ExtResource("2_fpbnc")
 MoveName = "5A"
 MoveState = 48
-Inputs = ExtResource("2_eatty")
+Inputs = ExtResource("1_el463")
 Priority = 5
 MoveEnd = 2
-CanCancelTo = [SubResource("Resource_cpbnt"), SubResource("Resource_gac08"), SubResource("Resource_khioq"), SubResource("Resource_atndp"), SubResource("Resource_63y75"), SubResource("Resource_4hq8l"), SubResource("Resource_4skw2")]
-ExtraVariablesRequirement = []
-ExtraVariablesChange = []
+CanCancelTo = Array[Object]([SubResource("Resource_cpbnt"), SubResource("Resource_gac08"), SubResource("Resource_khioq"), SubResource("Resource_atndp"), SubResource("Resource_63y75"), SubResource("Resource_4hq8l"), SubResource("Resource_4skw2")])
+VariablesRequirement = null
+VariablesChange = null
 CanBeOverrided = true
+IgnoreSelf = false
 IgnoreSamePriority = false
 AcceptNullStates = true
 AcceptCombatStates = true

@@ -1,32 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://gx3p6mu7di2g"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_ltb1u"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_qi0wu"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_ppnpl"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="4_xsglu"]
-
-[sub_resource type="Resource" id="Resource_58iw3"]
-script = ExtResource("1_ltb1u")
-SourceAnimation = "Hit_GetUp"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2_qi0wu")
-
-[sub_resource type="Resource" id="Resource_pc7tl"]
-script = ExtResource("4_xsglu")
-StateIndex = 0
-Condition = 1
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_ppnpl"]
 
 [resource]
 script = ExtResource("3_ppnpl")
-StateName = "Hit_GetUp"
-Duration = 16
-stateProperties = []
-statePhysics = []
-hitboxStates = [SubResource("2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_pc7tl")]
-animationSettings = [SubResource("Resource_58iw3")]
-AIFlags = 1
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

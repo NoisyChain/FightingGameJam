@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0y740kryylcs" path="res://Scripts/SakugaEngine/Resources/HitboxElement.cs" id="1_ydq7x"]
 [ext_resource type="Script" uid="uid://dxuwyhds75mce" path="res://Scripts/SakugaEngine/Resources/HitboxSettings.cs" id="2_tmmwm"]
+[ext_resource type="Resource" uid="uid://bwffnan18ibt8" path="res://Fighters/Shared/HitboxPresets/Pushbox_Idle.tres" id="2_xk3lm"]
 
 [sub_resource type="Resource" id="Resource_4q7u1"]
 script = ExtResource("1_ydq7x")
@@ -12,16 +13,13 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 GuardCrushEffectIndex = 1
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_t5ux6"]
 script = ExtResource("1_ydq7x")
@@ -32,16 +30,13 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 GuardCrushEffectIndex = 1
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_wdtdg"]
 script = ExtResource("1_ydq7x")
@@ -52,16 +47,13 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 GuardCrushEffectIndex = 1
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_0xb4u"]
 script = ExtResource("1_ydq7x")
@@ -73,16 +65,13 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 GuardCrushEffectIndex = 1
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_lxnao"]
 script = ExtResource("1_ydq7x")
@@ -95,24 +84,23 @@ GuardCrushEffectIndex = 1
 GroundHitstunType = 3
 GroundHitReaction = 5
 CrouchHitReaction = 5
-GroundHitKnockback = Vector2i(-80000, 30000)
+GroundHitKnockback = Vector2i(-80000, 40000)
 GroundHitKnockbackGravity = 200000
 GroundHitstun = 30
 GroundBlockKnockback = Vector2i(-80000, 0)
 GroundBlockstun = 18
 AirHitstunType = 3
 AirHitReaction = 5
-AirHitKnockback = Vector2i(-80000, 30000)
+AirHitKnockback = Vector2i(-80000, 40000)
 AirHitstun = 30
 AirBlockKnockback = Vector2i(-80000, 0)
 AirBlockstun = 18
 SelfPushbackForce = -45000
-BounceXTime = 40
-BounceXIntensity = 40
-BounceXState = 4
+BounceTime = 20
+BounceXIntensity = 70
+BounceYIntensity = 0
 
 [resource]
 script = ExtResource("2_tmmwm")
-PushboxCenter = Vector2i(0, 6000)
-PushboxSize = Vector2i(4000, 12000)
+Pushbox = ExtResource("2_xk3lm")
 Hitboxes = [SubResource("Resource_4q7u1"), SubResource("Resource_t5ux6"), SubResource("Resource_wdtdg"), SubResource("Resource_0xb4u"), SubResource("Resource_lxnao")]

@@ -1,36 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://xsfddocaa8ju"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_m5uqj"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_dha32"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_dmye6"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_uca51"]
-
-[sub_resource type="Resource" id="Resource_25rob"]
-script = ExtResource("1_m5uqj")
-SourceAnimation = "Blocking_Crouch"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="1"]
-script = ExtResource("2_dha32")
-
-[sub_resource type="Resource" id="5"]
-script = ExtResource("4_uca51")
-UseLateralSpeed = true
-UseVerticalSpeed = true
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_dmye6"]
 
 [resource]
 script = ExtResource("3_dmye6")
-StateName = "Blocking_Crouch"
-BaseStance = 1
-Type = 3
-Duration = 8
-Loop = true
-LoopFrames = Vector2i(0, 7)
-stateProperties = []
-statePhysics = [SubResource("5")]
-hitboxStates = [SubResource("1")]
-animationEvents = []
-throwPivot = []
-stateTransitions = []
-animationSettings = [SubResource("Resource_25rob")]
-AIFlags = 578
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

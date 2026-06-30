@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="HitboxSettings" format=3 uid="uid://bxmkahv2308i0"]
 
 [ext_resource type="Script" uid="uid://c0y740kryylcs" path="res://Scripts/SakugaEngine/Resources/HitboxElement.cs" id="1_x7a0d"]
+[ext_resource type="Resource" uid="uid://bwffnan18ibt8" path="res://Fighters/Shared/HitboxPresets/Pushbox_Idle.tres" id="2_2xmhp"]
 [ext_resource type="Script" uid="uid://dxuwyhds75mce" path="res://Scripts/SakugaEngine/Resources/HitboxSettings.cs" id="2_3p8jm"]
 
 [sub_resource type="Resource" id="Resource_1w6fv"]
@@ -12,15 +13,12 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_24boc"]
 script = ExtResource("1_x7a0d")
@@ -31,24 +29,23 @@ OpponentSuperGaugeGain = 10
 HitEffectIndex = 1
 BlockEffectIndex = 2
 ClashEffectIndex = 3
-ArmorHitEffectIndex = 4
 AirHitKnockbackGravity = 300000
 AirBlockKnockbackGravity = 30
 SelfPushbackForce = 0
 SelfPushbackDuration = 0
 BounceXIntensity = 0
-BounceXState = 0
 BounceYIntensity = 0
-BounceYState = 0
 
 [sub_resource type="Resource" id="Resource_aqr4w"]
 script = ExtResource("1_x7a0d")
-Center = Vector2i(6200, 2200)
-Size = Vector2i(3000, 3000)
+Center = Vector2i(5000, 3000)
+Size = Vector2i(5000, 5000)
 HitboxType = 1
 HitType = 3
 BaseDamage = 300
 GuardCrushDamage = 0
+SelfHitStopDuration = 10
+OpponentHitStopDuration = 10
 GroundHitstunType = 2
 GroundHitReaction = 8
 CrouchHitReaction = 8
@@ -64,10 +61,8 @@ AirHitstun = 30
 AirBlockKnockback = Vector2i(-30000, 50000)
 AirBlockstun = 12
 AllowSelfPushback = false
-HitConfirmState = 67
 
 [resource]
 script = ExtResource("2_3p8jm")
-PushboxCenter = Vector2i(0, 3000)
-PushboxSize = Vector2i(4000, 6000)
+Pushbox = ExtResource("2_2xmhp")
 Hitboxes = [SubResource("Resource_1w6fv"), SubResource("Resource_24boc"), SubResource("Resource_aqr4w")]

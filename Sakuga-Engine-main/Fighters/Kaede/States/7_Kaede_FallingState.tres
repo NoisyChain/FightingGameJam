@@ -1,43 +1,20 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://ds4iga01tk4iw"]
 
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_qgnsc"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="1_y3586"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="2"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="3_6f2ya"]
-
-[sub_resource type="Resource" id="Resource_gm6mq"]
-script = ExtResource("1_qgnsc")
-SourceAnimation = "Falling"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="Resource_bjvsn"]
-script = ExtResource("1_y3586")
-
-[sub_resource type="Resource" id="1"]
-script = ExtResource("2")
-UseGravity = true
-Gravity = 200000
-
-[sub_resource type="Resource" id="Resource_w4yoe"]
-script = ExtResource("3_6f2ya")
-StateIndex = 8
-Condition = 4
-DistanceArea = Vector2i(0, 99999)
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
+[ext_resource type="Resource" uid="uid://bqrxtdb7hov0" path="res://Fighters/Kaede/AnimationData/10_Kaede_Falling_AnimData.tres" id="1_cup6h"]
+[ext_resource type="Resource" uid="uid://dciieeb78vr5v" path="res://Fighters/Kaede/FrameDataEvents/Template_Gravity.tres" id="2_tq54u"]
+[ext_resource type="Resource" uid="uid://55yjftrn24fk" path="res://Fighters/Kaede/FrameDataEvents/Template_Loop.tres" id="3_tq54u"]
+[ext_resource type="Resource" uid="uid://bvxyesd7vmtp" path="res://Fighters/Kaede/FrameDataEvents/Template_Trans_Landing.tres" id="4_x5h21"]
 
 [resource]
 script = ExtResource("1")
 StateName = "Falling"
-BaseStance = 2
 Type = 1
-Duration = 6
-Loop = true
-LoopFrames = Vector2i(0, 5)
-stateProperties = []
-statePhysics = [SubResource("1")]
-hitboxStates = [SubResource("Resource_bjvsn")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_w4yoe")]
-animationSettings = [SubResource("Resource_gm6mq")]
+AnimationData = ExtResource("1_cup6h")
+TransitionEvents = Array[Object]([ExtResource("3_tq54u"), ExtResource("4_x5h21")])
+OnEnterEvents = null
+OnTickEvents = Array[Object]([ExtResource("2_tq54u")])
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 1

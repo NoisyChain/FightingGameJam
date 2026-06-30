@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://3xldlw7ukxf1"]
+
+[ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="1"]
+[ext_resource type="Script" uid="uid://dpgs1fcn5u351" path="res://Scripts/SakugaEngine/Resources/MoveCancelSettings.cs" id="1_ax3js"]
+[ext_resource type="Resource" uid="uid://bii142i8da7oq" path="res://Fighters/Shared/Inputs/13_Input_5C.tres" id="1_xppl2"]
+
+[sub_resource type="Resource" id="Resource_dr1tj"]
+script = ExtResource("1_ax3js")
+MoveIndex = 28
+Conditions = 8
+metadata/_custom_type_script = "uid://dpgs1fcn5u351"
+
+[sub_resource type="Resource" id="Resource_2bm83"]
+script = ExtResource("1_ax3js")
+MoveIndex = 38
+Conditions = 8
+metadata/_custom_type_script = "uid://dpgs1fcn5u351"
+
+[resource]
+script = ExtResource("1")
+MoveName = "5C"
+MoveState = 50
+Inputs = ExtResource("1_xppl2")
+Priority = 5
+MoveEnd = 2
+CanCancelTo = Array[Object]([SubResource("Resource_dr1tj"), SubResource("Resource_2bm83")])
+VariablesRequirement = null
+VariablesChange = null
+CanBeOverrided = true
+IgnoreSelf = false
+IgnoreSamePriority = false
+AcceptNullStates = true
+AcceptCombatStates = true
+UseOnGround = true

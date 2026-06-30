@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://87xpa7lbksa8" path="res://Scripts/SakugaEngine/Resources/InputSequence.cs" id="1_3skax"]
 [ext_resource type="Script" uid="uid://ce6shsv0dij5v" path="res://Scripts/SakugaEngine/Resources/InputOption.cs" id="2_5q2fi"]
-[ext_resource type="Script" uid="uid://dfht0pcq6fyxk" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="3_c7rr3"]
+[ext_resource type="Script" uid="uid://di4jwsd3y2x8w" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="3_c7rr3"]
 
 [sub_resource type="Resource" id="Resource_8kjc8"]
 script = ExtResource("1_3skax")
@@ -20,7 +20,7 @@ Directional = 2
 
 [sub_resource type="Resource" id="Resource_4uo5i"]
 script = ExtResource("2_5q2fi")
-Inputs = [SubResource("Resource_8kjc8"), SubResource("Resource_giw3p"), SubResource("Resource_jx6ng")]
+Inputs = Array[Object]([SubResource("Resource_8kjc8"), SubResource("Resource_giw3p"), SubResource("Resource_jx6ng")])
 
 [sub_resource type="Resource" id="Resource_6t0yt"]
 script = ExtResource("1_3skax")
@@ -34,10 +34,10 @@ DirectionalMode = 3
 
 [sub_resource type="Resource" id="Resource_m46e1"]
 script = ExtResource("2_5q2fi")
-Inputs = [SubResource("Resource_6t0yt"), SubResource("Resource_s2due"), SubResource("Resource_jx6ng")]
+Inputs = Array[Object]([SubResource("Resource_6t0yt"), SubResource("Resource_s2due"), SubResource("Resource_jx6ng")])
 
 [resource]
 script = ExtResource("3_c7rr3")
-ValidInputs = [SubResource("Resource_4uo5i"), SubResource("Resource_m46e1")]
+ValidInputs = Array[Object]([SubResource("Resource_4uo5i"), SubResource("Resource_m46e1")])
 AbsoluteDirection = true
 InputBuffer = 6

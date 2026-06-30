@@ -1,66 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://sjx2h33va3mb"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_4dg6t"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_7fif3"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_qfixn"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_7gcdu"]
-[ext_resource type="Script" uid="uid://5pyrbnu5lbp1" path="res://Scripts/SakugaEngine/Resources/FrameProperties.cs" id="5_ecu08"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="6_4o4xr"]
-
-[sub_resource type="Resource" id="Resource_hoxp6"]
-script = ExtResource("1_4dg6t")
-SourceAnimation = "Jump_Forward"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2_7fif3")
-
-[sub_resource type="Resource" id="5"]
-script = ExtResource("2_7fif3")
-Frame = 4
-HitboxIndex = 2
-
-[sub_resource type="Resource" id="6"]
-script = ExtResource("2_7fif3")
-Frame = 18
-
-[sub_resource type="Resource" id="1"]
-script = ExtResource("4_7gcdu")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="7"]
-script = ExtResource("4_7gcdu")
-UseLateralSpeed = true
-LateralSpeed = -28000
-UseVerticalSpeed = true
-
-[sub_resource type="Resource" id="Resource_i2hb0"]
-script = ExtResource("5_ecu08")
-Properties = 2
-
-[sub_resource type="Resource" id="Resource_exapb"]
-script = ExtResource("5_ecu08")
-Frame = 4
-
-[sub_resource type="Resource" id="Resource_rvtc2"]
-script = ExtResource("6_4o4xr")
-StateIndex = 7
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_qfixn"]
 
 [resource]
 script = ExtResource("3_qfixn")
-StateName = "Jump_Backwards"
-BaseStance = 2
-Type = 1
-Duration = 22
-stateProperties = [SubResource("Resource_i2hb0"), SubResource("Resource_exapb")]
-statePhysics = [SubResource("1"), SubResource("7")]
-hitboxStates = [SubResource("2"), SubResource("5"), SubResource("6")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_rvtc2")]
-animationSettings = [SubResource("Resource_hoxp6")]
-AIFlags = 12
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://cqoyp564l2rl7" path="res://Songs/Eyes Blind to the Future.ogg" id="18_mk26h"]
 [ext_resource type="Texture2D" uid="uid://d2w4ioudtovun" path="res://Sprites/P2SelectBOTTOM.png" id="18_sl6cr"]
 [ext_resource type="FontFile" uid="uid://cu0i5xdymo0ou" path="res://Tw Cen MT Condensed Medium.ttf" id="20_4qcp2"]
+[ext_resource type="PackedScene" uid="uid://mjtj8aourb2p" path="res://Scenes/Instances/input_remapper.tscn" id="23_4qcp2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3oegk"]
 load_path = "res://.godot/imported/P1SelectTOP.png-2ebaad07f100a8ab67245d35b2453cd9.ctex"
@@ -37,7 +38,7 @@ shader_parameter/intensity = 1.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sl6cr"]
 load_path = "res://.godot/imported/CSBackground.png-ba6071650616cfe82df7c63d6aa9f450.ctex"
 
-[node name="Control" type="Control" unique_id=464996932 node_paths=PackedStringArray("CharacterSelectMode", "StageSelectMode", "P1SelectedRender", "P2SelectedRender", "P1SelectedName", "P2SelectedName", "P1Cursor", "P2Cursor", "charactersContainer", "P1ColorSelect", "P2ColorSelect", "StageSelectedRender", "StageSelectedName", "SongSelectedName", "P1SelectingStage", "P2SelectingStage", "StageCursor", "stagesContainer")]
+[node name="Control" type="Control" unique_id=464996932 node_paths=PackedStringArray("CharSelectMode", "StageSelectMode", "P1SelectedRender", "P2SelectedRender", "P1SelectedName", "P2SelectedName", "P1Cursor", "P2Cursor", "charactersContainer", "P1ColorSelect", "P2ColorSelect", "Remapper", "StageSelectedRender", "StageSelectedName", "SongSelectedName", "P1SelectingStage", "P2SelectingStage", "StageCursor", "stagesContainer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,7 +52,7 @@ Match = ExtResource("2_ly1kb")
 fightersList = ExtResource("2_d1pnq")
 stagesList = ExtResource("3_qnnlv")
 songsList = ExtResource("4_i5d7u")
-CharacterSelectMode = NodePath("CharacterSelect")
+CharSelectMode = NodePath("CharacterSelect")
 StageSelectMode = NodePath("StageSelect")
 P1SelectedRender = NodePath("P1SelectedRender")
 P2SelectedRender = NodePath("P2SelectedRender")
@@ -65,6 +66,7 @@ randomCharPortrait = ExtResource("6_pej5c")
 randomCharRender = ExtResource("7_7p58r")
 P1ColorSelect = NodePath("CharacterSelect/ColorSelectP1")
 P2ColorSelect = NodePath("CharacterSelect/ColorSelectP2")
+Remapper = NodePath("CharacterSelect/InputRemapper")
 StageSelectedRender = NodePath("StageSelect/StagePortrait")
 StageSelectedName = NodePath("StageSelect/StageName")
 SongSelectedName = NodePath("StageSelect/SongName")
@@ -290,8 +292,34 @@ follow_focus = true
 horizontal_scroll_mode = 0
 
 [node name="Contents" type="VBoxContainer" parent="CharacterSelect/ColorSelectP2/ScrollContainer" unique_id=1840068908]
-layout_direction = 3
 layout_mode = 2
+layout_direction = 3
+
+[node name="RemapperPivotP1" type="Control" parent="CharacterSelect" unique_id=283686971]
+anchors_preset = 0
+offset_left = 20.0
+offset_right = 20.0
+
+[node name="RemapperPivotP2" type="Control" parent="CharacterSelect" unique_id=1327137743]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -286.0
+offset_right = -286.0
+grow_horizontal = 0
+
+[node name="InputRemapper" parent="CharacterSelect" unique_id=1679153397 node_paths=PackedStringArray("P1Pivot", "P2Pivot") instance=ExtResource("23_4qcp2")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 266.0
+offset_bottom = 394.0
+grow_horizontal = 1
+grow_vertical = 1
+P1Pivot = NodePath("../RemapperPivotP1")
+P2Pivot = NodePath("../RemapperPivotP2")
 
 [node name="StageSelect" type="Control" parent="." unique_id=928303259]
 visible = false

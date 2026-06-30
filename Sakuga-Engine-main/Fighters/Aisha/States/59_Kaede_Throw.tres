@@ -1,52 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://busjhjtdntp0s"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_s7f7k"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_t1mvv"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_ncmoi"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_fxphb"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="5_gp2cx"]
-
-[sub_resource type="Resource" id="Resource_ojn4h"]
-script = ExtResource("1_s7f7k")
-SourceAnimation = "Throw_Enter"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="Resource_5e2ap"]
-script = ExtResource("2_t1mvv")
-HitboxIndex = 18
-
-[sub_resource type="Resource" id="Resource_oxicv"]
-script = ExtResource("2_t1mvv")
-animationStage = 1
-Frame = 3
-HitboxIndex = 19
-
-[sub_resource type="Resource" id="Resource_nl4j0"]
-script = ExtResource("2_t1mvv")
-animationStage = 2
-Frame = 7
-HitboxIndex = 18
-
-[sub_resource type="Resource" id="Resource_mpd63"]
-script = ExtResource("4_fxphb")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-
-[sub_resource type="Resource" id="Resource_07r8c"]
-script = ExtResource("5_gp2cx")
-StateIndex = 0
-Condition = 1
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_ncmoi"]
 
 [resource]
 script = ExtResource("3_ncmoi")
-StateName = "Throw_Enter"
-Type = 2
-Duration = 19
-stateProperties = []
-statePhysics = [SubResource("Resource_mpd63")]
-hitboxStates = [SubResource("Resource_5e2ap"), SubResource("Resource_oxicv"), SubResource("Resource_nl4j0")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_07r8c")]
-animationSettings = [SubResource("Resource_ojn4h")]
-AIFlags = 18
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

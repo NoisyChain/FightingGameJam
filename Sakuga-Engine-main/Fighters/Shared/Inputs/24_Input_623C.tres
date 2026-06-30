@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://87xpa7lbksa8" path="res://Scripts/SakugaEngine/Resources/InputSequence.cs" id="1_pa1jb"]
 [ext_resource type="Script" uid="uid://ce6shsv0dij5v" path="res://Scripts/SakugaEngine/Resources/InputOption.cs" id="2_6mg61"]
-[ext_resource type="Script" uid="uid://dfht0pcq6fyxk" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="3_7bqb2"]
+[ext_resource type="Script" uid="uid://di4jwsd3y2x8w" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="3_7bqb2"]
 
 [sub_resource type="Resource" id="Resource_tyq07"]
 script = ExtResource("1_pa1jb")
@@ -28,7 +28,7 @@ Buttons = 4
 
 [sub_resource type="Resource" id="Resource_26osb"]
 script = ExtResource("2_6mg61")
-Inputs = [SubResource("Resource_tyq07"), SubResource("Resource_h8g2y"), SubResource("Resource_kn37o"), SubResource("Resource_oj3a4"), SubResource("Resource_h2up5")]
+Inputs = Array[Object]([SubResource("Resource_tyq07"), SubResource("Resource_h8g2y"), SubResource("Resource_kn37o"), SubResource("Resource_oj3a4"), SubResource("Resource_h2up5")])
 
 [sub_resource type="Resource" id="Resource_ybiua"]
 script = ExtResource("1_pa1jb")
@@ -56,7 +56,7 @@ Buttons = 4
 
 [sub_resource type="Resource" id="Resource_qup6d"]
 script = ExtResource("2_6mg61")
-Inputs = [SubResource("Resource_ybiua"), SubResource("Resource_6pggm"), SubResource("Resource_nphqb"), SubResource("Resource_2eq4l"), SubResource("Resource_ygh5i")]
+Inputs = Array[Object]([SubResource("Resource_ybiua"), SubResource("Resource_6pggm"), SubResource("Resource_nphqb"), SubResource("Resource_2eq4l"), SubResource("Resource_ygh5i")])
 
 [sub_resource type="Resource" id="Resource_fc2cl"]
 script = ExtResource("1_pa1jb")
@@ -69,9 +69,9 @@ Buttons = 4
 
 [sub_resource type="Resource" id="Resource_306g7"]
 script = ExtResource("2_6mg61")
-Inputs = [SubResource("Resource_ybiua"), SubResource("Resource_fc2cl"), SubResource("Resource_nphqb"), SubResource("Resource_xuk8l")]
+Inputs = Array[Object]([SubResource("Resource_ybiua"), SubResource("Resource_fc2cl"), SubResource("Resource_nphqb"), SubResource("Resource_xuk8l")])
 
 [resource]
 script = ExtResource("3_7bqb2")
-ValidInputs = [SubResource("Resource_26osb"), SubResource("Resource_qup6d"), SubResource("Resource_306g7")]
+ValidInputs = Array[Object]([SubResource("Resource_26osb"), SubResource("Resource_qup6d"), SubResource("Resource_306g7")])
 AbsoluteDirection = true

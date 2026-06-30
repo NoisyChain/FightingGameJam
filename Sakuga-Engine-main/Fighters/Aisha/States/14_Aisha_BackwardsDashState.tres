@@ -1,68 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://bhjxyp2y2q2ik"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_urufs"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_daxfx"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_4v1x5"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_qrrdc"]
-[ext_resource type="Script" uid="uid://5pyrbnu5lbp1" path="res://Scripts/SakugaEngine/Resources/FrameProperties.cs" id="5_2k828"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="6_ka2op"]
-
-[sub_resource type="Resource" id="Resource_1wvpj"]
-script = ExtResource("1_urufs")
-SourceAnimation = "Dash_Backwards"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="5"]
-script = ExtResource("2_daxfx")
-
-[sub_resource type="Resource" id="6"]
-script = ExtResource("2_daxfx")
-Frame = 4
-HitboxIndex = 4
-
-[sub_resource type="Resource" id="3"]
-script = ExtResource("4_qrrdc")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="2"]
-script = ExtResource("4_qrrdc")
-Frame = 4
-UseLateralSpeed = true
-LateralSpeed = -25000
-UseVerticalSpeed = true
-
-[sub_resource type="Resource" id="4"]
-script = ExtResource("4_qrrdc")
-Frame = 30
-UseLateralSpeed = true
-UseVerticalSpeed = true
-
-[sub_resource type="Resource" id="Resource_anmr3"]
-script = ExtResource("5_2k828")
-Properties = 3
-
-[sub_resource type="Resource" id="Resource_dmry4"]
-script = ExtResource("5_2k828")
-Frame = 4
-
-[sub_resource type="Resource" id="Resource_liohb"]
-script = ExtResource("6_ka2op")
-StateIndex = 0
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_4v1x5"]
 
 [resource]
 script = ExtResource("3_4v1x5")
-StateName = "Dash_Backwards"
-Type = 1
-Duration = 34
-stateProperties = [SubResource("Resource_anmr3"), SubResource("Resource_dmry4")]
-statePhysics = [SubResource("3"), SubResource("2"), SubResource("4")]
-hitboxStates = [SubResource("5"), SubResource("6")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_liohb")]
-animationSettings = [SubResource("Resource_1wvpj")]
-AIFlags = 10
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

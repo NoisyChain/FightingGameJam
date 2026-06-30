@@ -1,18 +1,7 @@
 [gd_resource type="Resource" script_class="MotionInputs" format=3 uid="uid://bii142i8da7oq"]
 
-[ext_resource type="Script" uid="uid://87xpa7lbksa8" path="res://Scripts/SakugaEngine/Resources/InputSequence.cs" id="1_2gfpw"]
-[ext_resource type="Script" uid="uid://ce6shsv0dij5v" path="res://Scripts/SakugaEngine/Resources/InputOption.cs" id="2_u3rre"]
-[ext_resource type="Script" uid="uid://dfht0pcq6fyxk" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="3_e1xb0"]
-
-[sub_resource type="Resource" id="Resource_6t0yt"]
-script = ExtResource("1_2gfpw")
-Buttons = 4
-
-[sub_resource type="Resource" id="Resource_4uo5i"]
-script = ExtResource("2_u3rre")
-Inputs = [SubResource("Resource_6t0yt")]
+[ext_resource type="Script" uid="uid://di4jwsd3y2x8w" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="3_e1xb0"]
 
 [resource]
 script = ExtResource("3_e1xb0")
-ValidInputs = [SubResource("Resource_4uo5i")]
-AbsoluteDirection = true
+ValidInputs = null

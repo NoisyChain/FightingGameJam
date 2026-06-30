@@ -1,50 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://b76jc47uyfbtt"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_8gy4g"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_njioh"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_un7b0"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_ssf4r"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="5_l6p38"]
-
-[sub_resource type="Resource" id="Resource_klx2d"]
-script = ExtResource("1_8gy4g")
-SourceAnimation = "Hit_Air_Weak"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2_njioh")
-
-[sub_resource type="Resource" id="Resource_b6fs7"]
-script = ExtResource("4_ssf4r")
-UseGravity = true
-Gravity = 200000
-
-[sub_resource type="Resource" id="Resource_jlgvt"]
-script = ExtResource("5_l6p38")
-StateIndex = 7
-Condition = 1
-
-[sub_resource type="Resource" id="Resource_pd3ux"]
-script = ExtResource("5_l6p38")
-StateIndex = 8
-Condition = 4
-
-[sub_resource type="Resource" id="Resource_1m76o"]
-script = ExtResource("5_l6p38")
-StateIndex = 21
-Condition = 32
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_un7b0"]
 
 [resource]
 script = ExtResource("3_un7b0")
-StateName = "Hit_Air_Weak"
-BaseStance = 2
-Type = 4
-Duration = 26
-stateProperties = []
-statePhysics = [SubResource("Resource_b6fs7")]
-hitboxStates = [SubResource("2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_jlgvt"), SubResource("Resource_pd3ux"), SubResource("Resource_1m76o")]
-animationSettings = [SubResource("Resource_klx2d")]
-AIFlags = 36
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

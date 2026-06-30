@@ -1,34 +1,20 @@
-[gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://cp44wcvfgrkue"]
+[gd_resource type="Resource" script_class="MoveSettings" load_steps=3 format=3 uid="uid://cp44wcvfgrkue"]
 
-[ext_resource type="Script" uid="uid://dh03r2nvy3pmu" path="res://Scripts/SakugaEngine/Resources/ExtraVariableChange.cs" id="1_j3kmb"]
+[ext_resource type="Resource" uid="uid://gqj3r3ub5wjc" path="res://Fighters/Shared/Inputs/25_Input_236BC.tres" id="1_tyncq"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="2_ksgc6"]
-[ext_resource type="Script" uid="uid://cuch5yr7c7dag" path="res://Scripts/SakugaEngine/Resources/ExtraVariableCondition.cs" id="2_n7lyi"]
-[ext_resource type="Resource" uid="uid://lvcahoav7546" path="res://Fighters/Shared/Inputs/14_Input_5D.tres" id="3_g2v5q"]
-
-[sub_resource type="Resource" id="Resource_l0tyb"]
-script = ExtResource("1_j3kmb")
-ChangeMode = 2
-ChangeValue = 5000
-metadata/_custom_type_script = "uid://dh03r2nvy3pmu"
-
-[sub_resource type="Resource" id="Resource_rji3l"]
-script = ExtResource("2_n7lyi")
-Value = 5000
-Mode = 1
-CompareMode = 2
-metadata/_custom_type_script = "uid://cuch5yr7c7dag"
 
 [resource]
 script = ExtResource("2_ksgc6")
 MoveName = "236BC"
 MoveState = 68
-Inputs = ExtResource("3_g2v5q")
+Inputs = ExtResource("1_tyncq")
+SuperGaugeRequired = 5000
+CanCancelTo = null
+ExtraVariablesRequirement = null
+ExtraVariablesChange = null
+MoveEnd = 2
 SuperFlash = 26
 Priority = 8
-MoveEnd = 2
-CanCancelTo = []
-ExtraVariablesRequirement = [null, null, null, SubResource("Resource_rji3l")]
-ExtraVariablesChange = [null, null, null, SubResource("Resource_l0tyb")]
 AcceptNullStates = true
 AcceptCombatStates = true
 UseOnGround = true

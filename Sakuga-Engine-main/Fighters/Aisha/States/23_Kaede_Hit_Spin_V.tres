@@ -1,39 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://c25a1pem6bj12"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_1b2f7"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_xxyug"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_f6hrn"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_5i3j0"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="5_tsfat"]
-
-[sub_resource type="Resource" id="Resource_xo0au"]
-script = ExtResource("1_1b2f7")
-SourceAnimation = "Hit_Spin_2"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2_xxyug")
-
-[sub_resource type="Resource" id="3"]
-script = ExtResource("4_5i3j0")
-UseGravity = true
-
-[sub_resource type="Resource" id="Resource_iik2s"]
-script = ExtResource("5_tsfat")
-StateIndex = 24
-Condition = 16
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_f6hrn"]
 
 [resource]
 script = ExtResource("3_f6hrn")
-StateName = "Hit_Spin_2"
-BaseStance = 2
-Type = 4
-Duration = 16
-stateProperties = []
-statePhysics = [SubResource("3")]
-hitboxStates = [SubResource("2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_iik2s")]
-animationSettings = [SubResource("Resource_xo0au")]
-AIFlags = 36
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

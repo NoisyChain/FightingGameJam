@@ -1,19 +1,13 @@
 [gd_resource type="Resource" script_class="SpawnsList" format=3 uid="uid://ctj5snxmpsbys"]
 
-[ext_resource type="PackedScene" uid="uid://c7g3ufv6aqgum" path="res://Fighters/Aisha/Spawnables/B5P/Instances/Bisha_5P_Spawn.tscn" id="1_jxxnj"]
 [ext_resource type="Script" uid="uid://fshoagbsdqd4" path="res://Scripts/SakugaEngine/Resources/SpawnObject.cs" id="2_1thpv"]
-[ext_resource type="PackedScene" uid="uid://digm71mdgewcn" path="res://Fighters/Aisha/Spawnables/B5]P[/Instances/Bisha_5]P[_Spawn.tscn" id="3_38yn7"]
 [ext_resource type="Script" uid="uid://k0lh4a8ntjdo" path="res://Scripts/SakugaEngine/Resources/SpawnsList.cs" id="3_vlgb8"]
 
 [sub_resource type="Resource" id="Resource_42ym4"]
 script = ExtResource("2_1thpv")
-SpawnScene = ExtResource("1_jxxnj")
-Amount = 1
 
 [sub_resource type="Resource" id="Resource_0ha2u"]
 script = ExtResource("2_1thpv")
-SpawnScene = ExtResource("3_38yn7")
-Amount = 1
 metadata/_custom_type_script = "uid://fshoagbsdqd4"
 
 [resource]

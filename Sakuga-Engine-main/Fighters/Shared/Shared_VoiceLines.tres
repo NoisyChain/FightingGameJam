@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_anggk")
-Sounds = Array[AudioStream]([])
+Sounds = null

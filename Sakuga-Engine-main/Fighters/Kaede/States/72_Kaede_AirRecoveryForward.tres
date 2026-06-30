@@ -1,40 +1,32 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://bk6kr345ggqfg"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_2wfc6"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="1_m6w7b"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="2_jy44t"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="3_ivesd"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="4_wkti8"]
+[ext_resource type="Script" uid="uid://bw1835rb2hj7y" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/MoveYAction.cs" id="1_2wfc6"]
+[ext_resource type="Resource" uid="uid://04a4bhxrfvo6" path="res://Fighters/Kaede/FrameDataEvents/Template_Trans_Airborne.tres" id="1_3os4q"]
+[ext_resource type="Resource" uid="uid://bmr2u6hnhi2ld" path="res://Fighters/Kaede/AnimationData/71_Kaede_Recovery_AnimData.tres" id="1_nkev4"]
+[ext_resource type="Script" uid="uid://c076jc3huncn2" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/FrameDataEvent.cs" id="2_3os4q"]
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="2_jy44t"]
+[ext_resource type="Resource" uid="uid://dciieeb78vr5v" path="res://Fighters/Kaede/FrameDataEvents/Template_Gravity.tres" id="3_nkev4"]
 
-[sub_resource type="Resource" id="Resource_3os4q"]
+[sub_resource type="Resource" id="Resource_li3q7"]
 script = ExtResource("1_2wfc6")
-SourceAnimation = "Falling"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
+Velocity = 80000
+metadata/_custom_type_script = "uid://bw1835rb2hj7y"
 
-[sub_resource type="Resource" id="Resource_uhee2"]
-script = ExtResource("1_m6w7b")
-
-[sub_resource type="Resource" id="Resource_7j86i"]
-script = ExtResource("3_ivesd")
-UseGravity = true
-Gravity = 200000
-
-[sub_resource type="Resource" id="Resource_fyawy"]
-script = ExtResource("4_wkti8")
-StateIndex = 7
-Condition = 1
+[sub_resource type="Resource" id="Resource_mi75o"]
+script = ExtResource("2_3os4q")
+Conditions = null
+Actions = Array[Object]([SubResource("Resource_li3q7")])
+metadata/_custom_type_script = "uid://c076jc3huncn2"
 
 [resource]
 script = ExtResource("2_jy44t")
-StateName = "Falling"
-BaseStance = 2
+StateName = "Air Recovery"
 Type = 5
-Duration = 40
-stateProperties = []
-statePhysics = [SubResource("Resource_7j86i")]
-hitboxStates = [SubResource("Resource_uhee2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_fyawy")]
-animationSettings = [SubResource("Resource_3os4q")]
+AnimationData = ExtResource("1_nkev4")
+TransitionEvents = Array[Object]([ExtResource("1_3os4q")])
+OnEnterEvents = Array[Object]([SubResource("Resource_mi75o")])
+OnTickEvents = Array[Object]([ExtResource("3_nkev4")])
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 4

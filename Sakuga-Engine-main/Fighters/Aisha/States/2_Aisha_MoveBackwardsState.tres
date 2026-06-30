@@ -1,36 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://c21nprlwktbed"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_20uyr"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_ucrlq"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_8a31m"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_cy1nq"]
-
-[sub_resource type="Resource" id="Resource_ab25c"]
-script = ExtResource("1_20uyr")
-SourceAnimation = "Walk_Backwards"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="Resource_65hle"]
-script = ExtResource("2_ucrlq")
-
-[sub_resource type="Resource" id="1"]
-script = ExtResource("4_cy1nq")
-UseLateralSpeed = true
-LateralSpeed = -15000
-UseVerticalSpeed = true
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_8a31m"]
 
 [resource]
 script = ExtResource("3_8a31m")
-StateName = "Walk_Backwards"
-Type = 1
-Duration = 33
-Loop = true
-LoopFrames = Vector2i(0, 32)
-stateProperties = []
-statePhysics = [SubResource("1")]
-hitboxStates = [SubResource("Resource_65hle")]
-animationEvents = []
-throwPivot = []
-stateTransitions = []
-animationSettings = [SubResource("Resource_ab25c")]
-AIFlags = 10
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="MotionInputs" format=3 uid="uid://c6x3ahrknltf1"]
+
+[ext_resource type="Script" uid="uid://87xpa7lbksa8" path="res://Scripts/SakugaEngine/Resources/InputSequence.cs" id="1_e2rdm"]
+[ext_resource type="Script" uid="uid://ce6shsv0dij5v" path="res://Scripts/SakugaEngine/Resources/InputOption.cs" id="2_p25g0"]
+[ext_resource type="Script" uid="uid://di4jwsd3y2x8w" path="res://Scripts/SakugaEngine/Resources/MotionInputs.cs" id="3_kiuox"]
+
+[sub_resource type="Resource" id="Resource_6t0yt"]
+script = ExtResource("1_e2rdm")
+Buttons = 1
+
+[sub_resource type="Resource" id="Resource_4uo5i"]
+script = ExtResource("2_p25g0")
+Inputs = Array[Object]([SubResource("Resource_6t0yt")])
+
+[sub_resource type="Resource" id="Resource_e2rdm"]
+script = ExtResource("1_e2rdm")
+Buttons = 2
+metadata/_custom_type_script = "uid://87xpa7lbksa8"
+
+[sub_resource type="Resource" id="Resource_p25g0"]
+script = ExtResource("2_p25g0")
+Inputs = Array[Object]([SubResource("Resource_e2rdm")])
+metadata/_custom_type_script = "uid://ce6shsv0dij5v"
+
+[sub_resource type="Resource" id="Resource_kiuox"]
+script = ExtResource("1_e2rdm")
+Buttons = 4
+metadata/_custom_type_script = "uid://87xpa7lbksa8"
+
+[sub_resource type="Resource" id="Resource_m5hto"]
+script = ExtResource("2_p25g0")
+Inputs = Array[Object]([SubResource("Resource_kiuox")])
+metadata/_custom_type_script = "uid://ce6shsv0dij5v"
+
+[resource]
+script = ExtResource("3_kiuox")
+ValidInputs = Array[Object]([SubResource("Resource_4uo5i"), SubResource("Resource_p25g0"), SubResource("Resource_m5hto")])
+AbsoluteDirection = true

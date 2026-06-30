@@ -1,41 +1,9 @@
 [gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://d3ptj55v4n83f"]
 
-[ext_resource type="Script" uid="uid://dh03r2nvy3pmu" path="res://Scripts/SakugaEngine/Resources/ExtraVariableChange.cs" id="1_7yath"]
-[ext_resource type="Script" uid="uid://cuch5yr7c7dag" path="res://Scripts/SakugaEngine/Resources/ExtraVariableCondition.cs" id="2_yls0p"]
-[ext_resource type="Resource" uid="uid://bcyy6q5j33eyu" path="res://Fighters/Shared/Inputs/10_Input_44.tres" id="3_dujab"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="4_hfw68"]
-
-[sub_resource type="Resource" id="Resource_y8ecd"]
-script = ExtResource("1_7yath")
-ChangeMode = 1
-ChangeValue = 1
-
-[sub_resource type="Resource" id="Resource_kkj64"]
-script = ExtResource("1_7yath")
-ChangeMode = 1
-ChangeValue = 1
-
-[sub_resource type="Resource" id="Resource_uvtq5"]
-script = ExtResource("1_7yath")
-
-[sub_resource type="Resource" id="Resource_jdrmi"]
-script = ExtResource("2_yls0p")
-Value = 1
-CompareMode = 3
-
-[sub_resource type="Resource" id="Resource_nknrw"]
-script = ExtResource("2_yls0p")
-Value = 1
-CompareMode = 3
 
 [resource]
 script = ExtResource("4_hfw68")
-MoveName = "Backwards Air Dash"
-MoveState = 16
-Inputs = ExtResource("3_dujab")
-Priority = 4
-DistanceArea = Vector2i(0, 99999)
-CanCancelTo = []
-ExtraVariablesRequirement = [SubResource("Resource_jdrmi"), SubResource("Resource_nknrw")]
-ExtraVariablesChange = [SubResource("Resource_y8ecd"), SubResource("Resource_kkj64"), SubResource("Resource_uvtq5")]
-UseOnAir = true
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null

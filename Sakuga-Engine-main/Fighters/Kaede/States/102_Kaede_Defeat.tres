@@ -1,30 +1,17 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://cod2qq8sw6usp"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_gamch"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="2_vxddt"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="3_bux6k"]
-
-[sub_resource type="Resource" id="Resource_gamch"]
-script = ExtResource("1_gamch")
-SourceAnimation = "Hit_Dizzy"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="Resource_scuwi"]
-script = ExtResource("3_bux6k")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-metadata/_custom_type_script = "uid://5you05l2efnd"
+[ext_resource type="Resource" uid="uid://bwb7upikhh86d" path="res://Fighters/Kaede/AnimationData/36_Kaede_Dizzy_AnimData.tres" id="1_vxddt"]
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="2_vxddt"]
 
 [resource]
 script = ExtResource("2_vxddt")
 StateName = "Defeat"
 Type = 5
-Duration = 24
-stateProperties = []
-statePhysics = [SubResource("Resource_scuwi")]
-hitboxStates = []
-animationEvents = []
-throwPivot = []
-stateTransitions = []
-animationSettings = [SubResource("Resource_gamch")]
+AnimationData = ExtResource("1_vxddt")
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 metadata/_custom_type_script = "uid://bf60srwkccsm8"

@@ -1,60 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://bbg2fju8xpeyl"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_b8o1x"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_80kyu"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_12asw"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_mo8pt"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="5_pj3vt"]
-
-[sub_resource type="Resource" id="Resource_ldev4"]
-script = ExtResource("1_b8o1x")
-SourceAnimation = "j_5B"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="Resource_a640j"]
-script = ExtResource("2_80kyu")
-HitboxIndex = 13
-
-[sub_resource type="Resource" id="Resource_qa1gi"]
-script = ExtResource("2_80kyu")
-animationStage = 1
-Frame = 12
-HitboxIndex = 15
-
-[sub_resource type="Resource" id="4"]
-script = ExtResource("2_80kyu")
-animationStage = 2
-Frame = 15
-HitboxIndex = 13
-
-[sub_resource type="Resource" id="5"]
-script = ExtResource("4_mo8pt")
-UseGravity = true
-Gravity = 200000
-
-[sub_resource type="Resource" id="Resource_xlsm1"]
-script = ExtResource("5_pj3vt")
-StateIndex = 7
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
-
-[sub_resource type="Resource" id="Resource_2bji3"]
-script = ExtResource("5_pj3vt")
-StateIndex = 8
-Condition = 4
-DistanceArea = Vector2i(0, 99999)
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_12asw"]
 
 [resource]
 script = ExtResource("3_12asw")
-StateName = "j_5B"
-BaseStance = 2
-Type = 2
-Duration = 27
-stateProperties = []
-statePhysics = [SubResource("5")]
-hitboxStates = [SubResource("Resource_a640j"), SubResource("Resource_qa1gi"), SubResource("4")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_xlsm1"), SubResource("Resource_2bji3")]
-animationSettings = [SubResource("Resource_ldev4")]
-AIFlags = 20
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

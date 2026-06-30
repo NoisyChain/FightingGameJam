@@ -1,79 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://bufnpfkh5me6g"]
 
-[ext_resource type="Script" uid="uid://bx8e460frmhfd" path="res://Scripts/SakugaEngine/Resources/Animation Events/SuperArmorAnimationEvent.cs" id="1_j6udh"]
-[ext_resource type="Script" uid="uid://bwm15ys7iwmfc" path="res://Scripts/SakugaEngine/Resources/AnimationEventsList.cs" id="2_xtcyb"]
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="3_btoxr"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="4_lhi1x"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="5_aa63b"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="6_quh5u"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="7_0popm"]
-
-[sub_resource type="Resource" id="Resource_fi3yh"]
-script = ExtResource("1_j6udh")
-ArmorValue = 3
-
-[sub_resource type="Resource" id="Resource_ix1su"]
-script = ExtResource("2_xtcyb")
-Events = [SubResource("Resource_fi3yh")]
-
-[sub_resource type="Resource" id="Resource_tmsc3"]
-script = ExtResource("1_j6udh")
-
-[sub_resource type="Resource" id="Resource_mq13r"]
-script = ExtResource("2_xtcyb")
-Frame = 16
-Events = [SubResource("Resource_tmsc3")]
-
-[sub_resource type="Resource" id="Resource_i24ac"]
-script = ExtResource("3_btoxr")
-SourceAnimation = "6P"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="2"]
-script = ExtResource("4_lhi1x")
-HitboxIndex = 5
-
-[sub_resource type="Resource" id="3"]
-script = ExtResource("4_lhi1x")
-animationStage = 1
-Frame = 18
-HitboxIndex = 8
-
-[sub_resource type="Resource" id="4"]
-script = ExtResource("4_lhi1x")
-animationStage = 2
-Frame = 22
-
-[sub_resource type="Resource" id="5"]
-script = ExtResource("6_quh5u")
-UseLateralSpeed = true
-LateralSpeed = 30000
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="6"]
-script = ExtResource("6_quh5u")
-Frame = 16
-UseLateralSpeed = true
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="Resource_6gdsy"]
-script = ExtResource("7_0popm")
-StateIndex = 0
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="5_aa63b"]
 
 [resource]
 script = ExtResource("5_aa63b")
-StateName = "6P"
-Type = 2
-Duration = 14
-stateProperties = []
-statePhysics = [SubResource("5"), SubResource("6")]
-hitboxStates = [SubResource("2"), SubResource("3"), SubResource("4")]
-animationEvents = [SubResource("Resource_ix1su"), SubResource("Resource_mq13r")]
-throwPivot = []
-stateTransitions = [SubResource("Resource_6gdsy")]
-animationSettings = [SubResource("Resource_i24ac")]
-AIFlags = 18
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

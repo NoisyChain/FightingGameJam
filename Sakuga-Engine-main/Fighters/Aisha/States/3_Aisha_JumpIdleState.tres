@@ -1,64 +1,12 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://cdegar6104g1i"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_he7is"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_yoe8e"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_whh1w"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="4_kg2x2"]
-[ext_resource type="Script" uid="uid://5pyrbnu5lbp1" path="res://Scripts/SakugaEngine/Resources/FrameProperties.cs" id="5_4efjd"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="6_1qrjy"]
-
-[sub_resource type="Resource" id="Resource_abic5"]
-script = ExtResource("1_he7is")
-SourceAnimation = "Jump_Neutral"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="Resource_6brnl"]
-script = ExtResource("2_yoe8e")
-
-[sub_resource type="Resource" id="1"]
-script = ExtResource("4_kg2x2")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="4"]
-script = ExtResource("4_kg2x2")
-Frame = 4
-UseLateralSpeed = true
-UseVerticalSpeed = true
-VerticalSpeed = 80000
-
-[sub_resource type="Resource" id="3"]
-script = ExtResource("4_kg2x2")
-Frame = 5
-UseGravity = true
-Gravity = 200000
-
-[sub_resource type="Resource" id="Resource_l5iry"]
-script = ExtResource("5_4efjd")
-Properties = 18
-
-[sub_resource type="Resource" id="Resource_hr20f"]
-script = ExtResource("5_4efjd")
-Frame = 4
-
-[sub_resource type="Resource" id="Resource_c502o"]
-script = ExtResource("6_1qrjy")
-StateIndex = 7
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_whh1w"]
 
 [resource]
 script = ExtResource("3_whh1w")
-StateName = "Jump_Neutral"
-BaseStance = 2
-Type = 1
-Duration = 25
-stateProperties = [SubResource("Resource_l5iry"), SubResource("Resource_hr20f")]
-statePhysics = [SubResource("1"), SubResource("4"), SubResource("3")]
-hitboxStates = [SubResource("Resource_6brnl")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_c502o")]
-animationSettings = [SubResource("Resource_abic5")]
-AIFlags = 12
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null

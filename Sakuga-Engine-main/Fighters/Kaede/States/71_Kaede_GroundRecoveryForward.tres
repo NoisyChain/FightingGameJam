@@ -1,40 +1,32 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://dukqdmlhoxwna"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_dmsk6"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="1_stvqc"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="2_0y67c"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="3_rdcqn"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="4_pfyuk"]
+[ext_resource type="Script" uid="uid://bw1835rb2hj7y" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/MoveYAction.cs" id="1_dmsk6"]
+[ext_resource type="Resource" uid="uid://bvxyesd7vmtp" path="res://Fighters/Kaede/FrameDataEvents/Template_Trans_Landing.tres" id="1_igooh"]
+[ext_resource type="Resource" uid="uid://bmr2u6hnhi2ld" path="res://Fighters/Kaede/AnimationData/71_Kaede_Recovery_AnimData.tres" id="1_w4rx1"]
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="2_0y67c"]
+[ext_resource type="Script" uid="uid://c076jc3huncn2" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/FrameDataEvent.cs" id="2_igooh"]
+[ext_resource type="Resource" uid="uid://dciieeb78vr5v" path="res://Fighters/Kaede/FrameDataEvents/Template_Gravity.tres" id="3_w4rx1"]
 
-[sub_resource type="Resource" id="Resource_igooh"]
+[sub_resource type="Resource" id="Resource_li3q7"]
 script = ExtResource("1_dmsk6")
-SourceAnimation = "Crouching"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
+Velocity = 80000
+metadata/_custom_type_script = "uid://bw1835rb2hj7y"
 
-[sub_resource type="Resource" id="Resource_uhee2"]
-script = ExtResource("1_stvqc")
-
-[sub_resource type="Resource" id="Resource_3l6il"]
-script = ExtResource("3_rdcqn")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="Resource_8b2pa"]
-script = ExtResource("4_pfyuk")
-StateIndex = 0
-Condition = 1
+[sub_resource type="Resource" id="Resource_mi75o"]
+script = ExtResource("2_igooh")
+Conditions = null
+Actions = Array[Object]([SubResource("Resource_li3q7")])
+metadata/_custom_type_script = "uid://c076jc3huncn2"
 
 [resource]
 script = ExtResource("2_0y67c")
-StateName = "Crouching"
+StateName = "Ground Recovery"
 Type = 5
-Duration = 40
-stateProperties = []
-statePhysics = [SubResource("Resource_3l6il")]
-hitboxStates = [SubResource("Resource_uhee2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_8b2pa")]
-animationSettings = [SubResource("Resource_igooh")]
+AnimationData = ExtResource("1_w4rx1")
+TransitionEvents = Array[Object]([ExtResource("1_igooh")])
+OnEnterEvents = Array[Object]([SubResource("Resource_mi75o")])
+OnTickEvents = Array[Object]([ExtResource("3_w4rx1")])
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 4098

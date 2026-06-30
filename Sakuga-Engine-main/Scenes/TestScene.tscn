@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://c320twmibeytx" path="res://MatchSettings.tres" id="5_5rbs6"]
 [ext_resource type="Resource" uid="uid://c8s3ip7gkhwq6" path="res://Roster.tres" id="5_pp7s2"]
 [ext_resource type="Resource" uid="uid://bl30fi0muatu1" path="res://StageSelect.tres" id="6_c264a"]
-[ext_resource type="Script" uid="uid://cbremyyalvs3" path="res://Scripts/SakugaEngine/Components/GameMonitor.cs" id="6_d185x"]
+[ext_resource type="Script" uid="uid://8r60yfod0dqc" path="res://Scripts/SakugaEngine/Components/GameMonitor.cs" id="6_d185x"]
 [ext_resource type="Script" uid="uid://j5t0o28p2u6u" path="res://Scripts/SakugaEngine/Game/SakugaRollbackManager.cs" id="6_jke5l"]
 [ext_resource type="Resource" uid="uid://fxj4uvd0y37r" path="res://Soundtrack.tres" id="7_6xh1p"]
 
@@ -23,7 +23,7 @@ DelayTimer = NodePath("RoundDelay")
 script = ExtResource("3_201fe")
 metadata/_custom_type_script = "uid://cmq3cp1n0copp"
 
-[node name="GameManager" type="Node" parent="." unique_id=2009171254 node_paths=PackedStringArray("Monitor", "FighterUI", "Camera", "BGMSource")]
+[node name="GameManager" type="Node" parent="." unique_id=2009171254 node_paths=PackedStringArray("Monitor", "FighterUI", "Camera")]
 script = ExtResource("1_ocl0l")
 Match = ExtResource("5_5rbs6")
 Monitor = NodePath("../GameMonitor")
@@ -32,7 +32,6 @@ stagesList = ExtResource("6_c264a")
 songsList = ExtResource("7_6xh1p")
 FighterUI = NodePath("../CanvasLayer")
 Camera = NodePath("../Camera3D")
-BGMSource = NodePath("../BGM")
 
 [node name="RollbackManager" type="Node" parent="." unique_id=1298643102 node_paths=PackedStringArray("GameManager")]
 script = ExtResource("6_jke5l")
@@ -45,13 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -7)
 cull_mask = 1048557
 fov = 27.0
 script = ExtResource("2_dh05b")
-minBounds = Vector2(-7, 1.25)
-maxBounds = Vector2(7, 10)
-minOffset = Vector2(-6.5, 1.2)
-maxOffset = Vector2(-15.5, 3.16)
-maxDistance = 14.5
-boundsAdditionalNear = 1.86
-boundsAdditionalFar = 5.68
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1790037158]
 volume_db = -7.5

@@ -1,52 +1,47 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://d3jgpgeq688i3"]
 
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_lvb1n"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="3"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="4_oarr7"]
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1"]
+[ext_resource type="Resource" uid="uid://cixk0mdi5e4c8" path="res://Fighters/Kaede/AnimationData/49_Kaede_5A_AnimData.tres" id="1_ynb4b"]
+[ext_resource type="Script" uid="uid://n7xih8pqfpwo" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/ChangeSideAction.cs" id="2_btvbr"]
+[ext_resource type="Script" uid="uid://bgwrlqrhqb2a4" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/MoveXAction.cs" id="2_pm4w0"]
+[ext_resource type="Script" uid="uid://bw1835rb2hj7y" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/Actions/MoveYAction.cs" id="3_pm4w0"]
+[ext_resource type="Resource" uid="uid://nvkiyhr0b8sx" path="res://Fighters/Kaede/FrameDataEvents/Template_Trans_Idle.tres" id="4_1m68e"]
+[ext_resource type="Script" uid="uid://c076jc3huncn2" path="res://Scripts/SakugaEngine/Resources/FrameDataEvents/FrameDataEvent.cs" id="4_btvbr"]
 
-[sub_resource type="Resource" id="Resource_ynb4b"]
-script = ExtResource("1_lvb1n")
-SourceAnimation = "5A"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
+[sub_resource type="Resource" id="Resource_uhin5"]
+script = ExtResource("2_btvbr")
+metadata/_custom_type_script = "uid://n7xih8pqfpwo"
 
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2")
-HitboxIndex = 5
+[sub_resource type="Resource" id="Resource_q8i2b"]
+script = ExtResource("4_btvbr")
+Conditions = null
+Actions = Array[Object]([SubResource("Resource_uhin5")])
+metadata/_custom_type_script = "uid://c076jc3huncn2"
 
-[sub_resource type="Resource" id="3"]
-script = ExtResource("2")
-animationStage = 1
-Frame = 3
-HitboxIndex = 6
+[sub_resource type="Resource" id="Resource_btvbr"]
+script = ExtResource("2_pm4w0")
+UseInertia = true
+metadata/_custom_type_script = "uid://bgwrlqrhqb2a4"
 
-[sub_resource type="Resource" id="4"]
-script = ExtResource("2")
-animationStage = 2
-Frame = 7
+[sub_resource type="Resource" id="Resource_6aa6g"]
+script = ExtResource("3_pm4w0")
+metadata/_custom_type_script = "uid://bw1835rb2hj7y"
 
-[sub_resource type="Resource" id="5"]
-script = ExtResource("3")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-
-[sub_resource type="Resource" id="Resource_27dlk"]
-script = ExtResource("4_oarr7")
-StateIndex = 0
-Condition = 1
-DistanceArea = Vector2i(0, 99999)
+[sub_resource type="Resource" id="Resource_pempn"]
+script = ExtResource("4_btvbr")
+Conditions = null
+Actions = Array[Object]([SubResource("Resource_btvbr"), SubResource("Resource_6aa6g")])
+metadata/_custom_type_script = "uid://c076jc3huncn2"
 
 [resource]
 script = ExtResource("1")
 StateName = "5A"
 Type = 2
-Duration = 14
-stateProperties = []
-statePhysics = [SubResource("5")]
-hitboxStates = [SubResource("2"), SubResource("3"), SubResource("4")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_27dlk")]
-animationSettings = [SubResource("Resource_ynb4b")]
+AnimationData = ExtResource("1_ynb4b")
+TransitionEvents = Array[Object]([ExtResource("4_1m68e")])
+OnEnterEvents = Array[Object]([SubResource("Resource_q8i2b")])
+OnTickEvents = Array[Object]([SubResource("Resource_pempn")])
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 18

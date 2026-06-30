@@ -1,8 +1,5 @@
 [gd_scene format=3 uid="uid://cdgv3p8fgvlib"]
 
-[ext_resource type="Texture2D" uid="uid://d070uuujyqe08" path="res://Sprites/Icons/EyeballLoading.png" id="1_nej77"]
-[ext_resource type="FontFile" uid="uid://cu0i5xdymo0ou" path="res://Tw Cen MT Condensed Medium.ttf" id="2_5jvfp"]
-
 [node name="LoadingScreenSimple" type="Control" unique_id=189240448]
 z_index = 100
 layout_mode = 3
@@ -21,14 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=172879089]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(31.99973, 17.999737)
-texture = ExtResource("1_nej77")
-expand_mode = 1
-
 [node name="Label" type="Label" parent="." unique_id=2102181567]
 layout_mode = 1
 anchors_preset = 3
@@ -36,14 +25,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -241.0
-offset_top = -78.0
-offset_right = -111.0
-offset_bottom = -23.0
+offset_left = -225.0
+offset_top = -83.0
+offset_right = -39.0
+offset_bottom = -28.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_5jvfp")
-theme_override_font_sizes/font_size = 50
-text = "LOADING"
+theme_override_font_sizes/font_size = 40
+text = "Loading..."
 horizontal_alignment = 2
 vertical_alignment = 1

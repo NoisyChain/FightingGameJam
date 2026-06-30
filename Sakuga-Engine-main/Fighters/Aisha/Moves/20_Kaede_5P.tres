@@ -1,82 +1,9 @@
 [gd_resource type="Resource" script_class="MoveSettings" format=3 uid="uid://btkujcya3br04"]
 
-[ext_resource type="Script" uid="uid://dpgs1fcn5u351" path="res://Scripts/SakugaEngine/Resources/MoveCancelSettings.cs" id="1_jvptc"]
-[ext_resource type="Resource" uid="uid://bii142i8da7oq" path="res://Fighters/Shared/Inputs/13_Input_5P.tres" id="2_jvptc"]
 [ext_resource type="Script" uid="uid://gk1rkw667o4n" path="res://Scripts/SakugaEngine/Resources/MoveSettings.cs" id="3_xfsrn"]
-
-[sub_resource type="Resource" id="Resource_gnep5"]
-script = ExtResource("1_jvptc")
-MoveIndex = 18
-Conditions = 6
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_ps5fi"]
-script = ExtResource("1_jvptc")
-MoveIndex = 19
-Conditions = 6
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_l4a1n"]
-script = ExtResource("1_jvptc")
-MoveIndex = 22
-Conditions = 6
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_6ywf2"]
-script = ExtResource("1_jvptc")
-MoveIndex = 23
-Conditions = 6
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_r5xbi"]
-script = ExtResource("1_jvptc")
-MoveIndex = 26
-Conditions = 6
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_gyohb"]
-script = ExtResource("1_jvptc")
-MoveIndex = 27
-Conditions = 6
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_j7jp5"]
-script = ExtResource("1_jvptc")
-MoveIndex = 30
-Conditions = 6
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_7qiwn"]
-script = ExtResource("1_jvptc")
-MoveIndex = 31
-Conditions = 6
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
-
-[sub_resource type="Resource" id="Resource_4nh55"]
-script = ExtResource("1_jvptc")
-MoveIndex = 32
-Conditions = 6
-FrameThreshold = Vector2i(0, 999)
-metadata/_custom_type_script = "uid://dpgs1fcn5u351"
 
 [resource]
 script = ExtResource("3_xfsrn")
-MoveName = "5P"
-MoveState = 50
-Inputs = ExtResource("2_jvptc")
-Priority = 5
-MoveEnd = 2
-ChargeRequired = Vector2i(0, 999)
-CanCancelTo = [SubResource("Resource_gnep5"), SubResource("Resource_ps5fi"), SubResource("Resource_l4a1n"), SubResource("Resource_6ywf2"), SubResource("Resource_r5xbi"), SubResource("Resource_gyohb"), SubResource("Resource_j7jp5"), SubResource("Resource_7qiwn"), SubResource("Resource_4nh55")]
-ExtraVariablesRequirement = []
-ExtraVariablesChange = []
-CanBeOverrided = true
-IgnoreSamePriority = false
-AcceptNullStates = true
-AcceptCombatStates = true
-UseOnGround = true
+CanCancelTo = null
+VariablesRequirement = null
+VariablesChange = null

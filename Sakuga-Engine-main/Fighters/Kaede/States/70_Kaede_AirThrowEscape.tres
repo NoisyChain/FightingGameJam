@@ -1,41 +1,18 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://bgqcyt7ecr63o"]
 
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="1_ggqvs"]
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_gmu35"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="2_qh4pd"]
-[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="3_dgmp6"]
-[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="4_gyt53"]
-
-[sub_resource type="Resource" id="Resource_u5px2"]
-script = ExtResource("1_gmu35")
-SourceAnimation = "Falling"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="Resource_uhee2"]
-script = ExtResource("1_ggqvs")
-
-[sub_resource type="Resource" id="Resource_3l6il"]
-script = ExtResource("3_dgmp6")
-UseLateralSpeed = true
-UseVerticalSpeed = true
-UseGravity = true
-
-[sub_resource type="Resource" id="Resource_fyawy"]
-script = ExtResource("4_gyt53")
-StateIndex = 7
-Condition = 1
+[ext_resource type="Resource" uid="uid://bdpv1hnn4wwh6" path="res://Fighters/Kaede/AnimationData/70_Kaede_ThrowEscape_AnimData.tres" id="1_iky1s"]
+[ext_resource type="Resource" uid="uid://04a4bhxrfvo6" path="res://Fighters/Kaede/FrameDataEvents/Template_Trans_Airborne.tres" id="1_u5px2"]
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="2_qh4pd"]
 
 [resource]
 script = ExtResource("2_qh4pd")
-StateName = "Falling"
-BaseStance = 2
+StateName = "Throw Escape Air"
 Type = 5
-Duration = 20
-stateProperties = []
-statePhysics = [SubResource("Resource_3l6il")]
-hitboxStates = [SubResource("Resource_uhee2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = [SubResource("Resource_fyawy")]
-animationSettings = [SubResource("Resource_u5px2")]
+AnimationData = ExtResource("1_iky1s")
+TransitionEvents = Array[Object]([ExtResource("1_u5px2")])
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 1
