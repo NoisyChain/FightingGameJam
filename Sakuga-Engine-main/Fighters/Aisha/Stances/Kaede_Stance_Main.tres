@@ -36,7 +36,7 @@
 [ext_resource type="Resource" uid="uid://dnrry1vh54waw" path="res://Fighters/Aisha/Moves/32_Kaede_AB.tres" id="33_kjsi0"]
 [ext_resource type="Resource" uid="uid://cf1xq80leoi0n" path="res://Fighters/Aisha/Moves/25_Aisha_j_2B.tres" id="33_vefi2"]
 [ext_resource type="Resource" uid="uid://cwsoagvtmiwxc" path="res://Fighters/Aisha/Moves/26_Kaede_j_5]P[.tres" id="35_v33hq"]
-[ext_resource type="Script" uid="uid://ddrvw4nom6hlu" path="res://Scripts/SakugaEngine/Resources/FighterStance.cs" id="40_0jso0"]
+[ext_resource type="Script" uid="uid://00dse0vp38l7" path="res://Scripts/SakugaEngine/Resources/FighterStance.cs" id="40_0jso0"]
 
 [resource]
 script = ExtResource("40_0jso0")
@@ -44,13 +44,6 @@ IsDamagePersistent = true
 IsRoundPersistent = true
 Moves = [ExtResource("1_3s2yv"), ExtResource("2_li2yo"), ExtResource("3_v6k16"), ExtResource("4_cbbht"), ExtResource("5_v33hq"), ExtResource("6_vefi2"), ExtResource("7_5yg0v"), ExtResource("8_5k5rx"), ExtResource("9_j4l6j"), ExtResource("10_0mu2k"), ExtResource("11_urfsr"), ExtResource("12_8ce7n"), ExtResource("13_2cxuo"), ExtResource("14_5508n"), ExtResource("15_uhg81"), ExtResource("16_2rkyo"), ExtResource("17_ouaoq"), ExtResource("18_0tcb4"), ExtResource("33_kjsi0"), ExtResource("19_mrmri"), ExtResource("20_0c7pe"), ExtResource("21_rrca7"), ExtResource("22_mrmri"), ExtResource("23_6mdcy"), ExtResource("24_3s2yv"), ExtResource("25_3s2yv"), ExtResource("26_li2yo"), ExtResource("27_li2yo"), ExtResource("28_v6k16"), ExtResource("24_6gbic"), ExtResource("30_v6k16"), ExtResource("31_cbbht"), ExtResource("32_v33hq"), ExtResource("33_vefi2"), ExtResource("27_r8x84"), ExtResource("35_v33hq")]
 HitReactions = PackedInt32Array(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 61)
-GroundBlockInitialState = 33
-CrouchBlockInitialState = 38
-AirBlockInitialState = 43
-GroundForwardRecoveryState = 71
-GroundBackwardsRecoveryState = 71
-AirForwardRecoveryState = 72
-AirBackwardsRecoveryState = 72
-OffTheGroundRecoveryState = 72
+BlockReactions = null
 GroundThrowEscapeState = 69
 AirThrowEscapeState = 70

@@ -101,7 +101,6 @@
 [ext_resource type="Script" uid="uid://dqqr3jnsmcig6" path="res://Scripts/SakugaEngine/Components/CustomVariable.cs" id="292_wgu3i"]
 [ext_resource type="Script" uid="uid://cmq3cp1n0copp" path="res://Scripts/SakugaEngine/Components/FrameTimer.cs" id="293_fyf32"]
 
-
 [sub_resource type="Animation" id="42"]
 resource_name = "2A"
 length = 0.2
@@ -2811,7 +2810,7 @@ Pool = NodePath("Pool")
 Brain = NodePath("AIBrain")
 AllowHit = 4
 Animator = NodePath("Graphics/Mesh")
-Graphics = [NodePath("Graphics/Mesh/AishaGraphics")]
+Graphics = [NodePath("Graphics")]
 Data = ExtResource("2_nr18p")
 SpawnablesList = ExtResource("3_grfcy")
 VFXList = ExtResource("4_inrqw")

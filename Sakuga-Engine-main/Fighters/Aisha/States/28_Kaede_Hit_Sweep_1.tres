@@ -1,27 +1,15 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://cph7gdptgjm2t"]
 
-[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_eoa31"]
-[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_bghgy"]
-[ext_resource type="Script" uid="uid://da1el624050no" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_4vkgx"]
-
-[sub_resource type="Resource" id="Resource_qkek5"]
-script = ExtResource("1_eoa31")
-SourceAnimation = "Hit_Sweep_1"
-metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
-
-[sub_resource type="Resource" id="2"]
-script = ExtResource("2_bghgy")
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_4vkgx"]
 
 [resource]
 script = ExtResource("3_4vkgx")
 StateName = "Hit_Sweep_1"
 Type = 4
-Duration = 16
-stateProperties = []
-statePhysics = []
-hitboxStates = [SubResource("2")]
-animationEvents = []
-throwPivot = []
-stateTransitions = []
-animationSettings = [SubResource("Resource_qkek5")]
+TransitionEvents = null
+OnEnterEvents = null
+OnTickEvents = null
+OnExitEvents = null
+OnHitConfirmEvents = null
+OnHitReactionEvents = null
 AIFlags = 161

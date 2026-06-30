@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="FighterState" format=3 uid="uid://b6751nxbbsmpr"]
 
+[ext_resource type="Resource" uid="uid://che4jsqptvi4b" path="res://Fighters/Kaede/AnimationData/0_Kaede_Neutral_AnimData.tres" id="1_j5bny"]
 [ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="3_igf2v"]
 
 [resource]
 script = ExtResource("3_igf2v")
+StateName = "Aisha_Idle"
+Type = 1
+AnimationData = ExtResource("1_j5bny")
 TransitionEvents = null
 OnEnterEvents = null
 OnTickEvents = null
