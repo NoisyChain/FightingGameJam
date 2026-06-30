@@ -113,10 +113,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -23.0
-offset_top = 22.0
-offset_right = -23.0
-offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -136,11 +132,14 @@ grow_vertical = 2
 columns = 3
 
 [node name="TextureRect" type="TextureRect" parent="CharacterSelect" unique_id=1325703499]
-layout_mode = 0
-offset_left = 23.0
-offset_top = -22.0
-offset_right = 63.0
-offset_bottom = 18.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9990001
+offset_right = -1239.9998
+offset_bottom = -679.33514
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(31.999855, 17.999796)
 texture = ExtResource("15_tqyob")
 expand_mode = 1
@@ -296,21 +295,22 @@ layout_mode = 2
 layout_direction = 3
 
 [node name="RemapperPivotP1" type="Control" parent="CharacterSelect" unique_id=283686971]
-anchors_preset = 0
-offset_left = 20.0
-offset_right = 20.0
+layout_mode = 1
+anchor_left = 0.016
+anchor_right = 0.016
+offset_left = -0.48000145
+offset_right = -0.48000145
 
 [node name="RemapperPivotP2" type="Control" parent="CharacterSelect" unique_id=1327137743]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -286.0
-offset_right = -286.0
+anchor_left = 1.018
+anchor_right = 1.018
+offset_left = -309.04004
+offset_right = -309.04004
 grow_horizontal = 0
 
 [node name="InputRemapper" parent="CharacterSelect" unique_id=1679153397 node_paths=PackedStringArray("P1Pivot", "P2Pivot") instance=ExtResource("23_4qcp2")]
-layout_mode = 0
+layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

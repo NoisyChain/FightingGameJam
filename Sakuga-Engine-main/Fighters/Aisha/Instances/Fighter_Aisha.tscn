@@ -2848,7 +2848,7 @@ region_rect = Rect2(711.25, 46.25, 2, 0)
 libraries/ = SubResource("AnimationLibrary_n2gjo")
 
 [node name="HitboxViewer" parent="Graphics" unique_id=648540791 node_paths=PackedStringArray("body") instance=ExtResource("284_g88n2")]
-body = NodePath("")
+body = NodePath("../../Body")
 
 [node name="Sounds" type="Node3D" parent="Graphics" unique_id=1869837634]
 
