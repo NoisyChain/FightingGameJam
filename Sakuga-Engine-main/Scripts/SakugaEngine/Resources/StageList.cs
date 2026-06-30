@@ -3,9 +3,9 @@ using System;
 
 namespace SakugaEngine.Resources
 {
-	[GlobalClass]
-	public partial class StageList : Resource
-	{
-		[Export] public StageElement[] elements;
-	}
+    [GlobalClass]
+    public partial class StageList : Resource
+    {
+        [Export] public StageElement[] elements;
+    }
 }

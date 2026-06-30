@@ -3,7 +3,7 @@ using System;
 
 namespace SakugaEngine.Resources
 {
-    [GlobalClass] [Tool]
+    [GlobalClass]
     public partial class InputOption : Resource
     {
         [Export] public InputSequence[] Inputs;

@@ -3,7 +3,7 @@ using System;
 
 namespace SakugaEngine.Resources
 {
-    [GlobalClass] [Tool]
+    [GlobalClass]
     public partial class AICondition : Resource
     {
         [Export] public Vector2I Distance;

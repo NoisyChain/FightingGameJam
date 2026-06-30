@@ -3,11 +3,11 @@ using System;
 
 namespace SakugaEngine.Resources
 {
-	[GlobalClass] [Tool]
-	public partial class FighterOutro : Resource
-	{
-		[Export] public int StateIndex;
-		[Export] public string ForOpponent = "";
-		[Export(PropertyHint.MultilineText)] public string FinalMessage;
-	}
+    [GlobalClass]
+    public partial class FighterOutro : Resource
+    {
+        [Export] public int StateIndex;
+        [Export] public string ForOpponent = "";
+        [Export(PropertyHint.MultilineText)] public string FinalMessage;
+    }
 }

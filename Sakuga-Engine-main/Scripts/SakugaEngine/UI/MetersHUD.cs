@@ -2,126 +2,87 @@ using Godot;
 
 namespace SakugaEngine.UI
 {
-	public partial class MetersHUD : Control
-	{
-		[Export] private TextureProgressBar P1Contract;
-		[Export] private TextureProgressBar P2Contract;
-		[Export] private TextureProgressBar P1Seal;
-		[Export] private TextureProgressBar P2Seal;
-		[Export] private TextureProgressBar P1Charge;
-		[Export] private TextureProgressBar P2Charge;
-		[Export] private Label P1TrainingInfo;
-		[Export] private Label P2TrainingInfo;
-		[Export] private InputHistory P1InputHistory;
-		[Export] private InputHistory P2InputHistory;
+    public partial class MetersHUD : Control
+    {
+        [Export] private TextureProgressBar P1Meter;
+        [Export] private TextureProgressBar P2Meter;
+        [Export] private Label P1TrainingInfo;
+        [Export] private Label P2TrainingInfo;
+        [Export] private InputHistory P1InputHistory;
+        [Export] private InputHistory P2InputHistory;
 
-		[ExportCategory("References")]
-		// P1 Charge Gauge
-		[Export] private Texture2D P1ChargeChargeTexture;
-		[Export] private Texture2D P1ChargeFullTexture;
-		// P2 Charge Gauge
-		[Export] private Texture2D P2ChargeChargeTexture;
-		[Export] private Texture2D P2ChargeFullTexture;
+        private int CurrentFrameAdvantage;
 
-		private int CurrentFrameAdvantage;
+        /*public override void _Ready()
+        {
+            P1Meter = GetNode<TextureProgressBar>("Meters/P1Meter");
+            P2Meter = GetNode<TextureProgressBar>("Meters/P2Meter");
+            P1TrainingInfo = GetNode<Label>("TrainingInfo/P1Info/Information");
+            P2TrainingInfo = GetNode<Label>("TrainingInfo/P2Info/Information");
+        }*/
 
-		/*public override void _Ready()
-		{
-			P1Meter = GetNode<TextureProgressBar>("Meters/P1Meter");
-			P2Meter = GetNode<TextureProgressBar>("Meters/P2Meter");
-			P1TrainingInfo = GetNode<Label>("TrainingInfo/P1Info/Information");
-			P2TrainingInfo = GetNode<Label>("TrainingInfo/P2Info/Information");
-		}*/
+        public void Setup(SakugaActor[] fighters)
+        {
+            P1Meter.MaxValue = fighters[0].Data.MaxSuperGauge;
+            P2Meter.MaxValue = fighters[1].Data.MaxSuperGauge;
+        }
 
-		public void Setup(SakugaFighter[] fighters)
-		{
-			P1Contract.MaxValue = fighters[0].Variables.ExtraVariables[5].MaxValue;
-			P2Contract.MaxValue = fighters[1].Variables.ExtraVariables[5].MaxValue;
-			
-			P1Seal.MaxValue = fighters[0].Variables.ExtraVariables[6].MaxValue;
-			P2Seal.MaxValue = fighters[1].Variables.ExtraVariables[6].MaxValue;
-		}
+        public void UpdateMeters(SakugaActor[] fighters)
+        {
+            P1Meter.Value = fighters[0].Parameters.SuperGauge.CurrentValue;
+            P2Meter.Value = fighters[1].Parameters.SuperGauge.CurrentValue;
 
-		public void UpdateMeters(SakugaFighter[] fighters)
-		{
-			// Contract Gauge
-			P1Contract.Value = fighters[0].FighterVars.Contracts;
-			P2Contract.Value = fighters[1].FighterVars.Contracts;
-			
-			// Seal Gauge
-			P1Seal.Value = fighters[0].FighterVars.Seals;
-			P2Seal.Value = fighters[1].FighterVars.Seals;
-			
-			// Charge Gauge
-			uint Charge1Value = fighters[0].FighterVars.PartnerMeter;
-			uint Charge2Value = fighters[1].FighterVars.PartnerMeter;
-			
-			if (Charge1Value < 1000)
-				P1Charge.TextureProgress = P1ChargeChargeTexture;
-			else if (Charge1Value >= 1000)
-				P1Charge.TextureProgress = P1ChargeFullTexture;
-				
-			if (Charge2Value < 1000)
-				P2Charge.TextureProgress = P2ChargeChargeTexture;
-			else if (Charge2Value >= 1000)
-				P2Charge.TextureProgress = P2ChargeFullTexture;
-			
-			P1Charge.Value = Charge1Value;
-			P2Charge.Value = Charge2Value;
-			
-			GetFrameAdvantage(fighters);
+            GetFrameAdvantage(fighters);
 
-			P1InputHistory.SetHistoryList(fighters[0].Inputs);
-			P2InputHistory.SetHistoryList(fighters[1].Inputs);
+            P1InputHistory.SetHistoryList(fighters[0].Inputs);
+            P2InputHistory.SetHistoryList(fighters[1].Inputs);
 
-			P1TrainingInfo.Text = TrainingInfoText(fighters[0], fighters[1]);
-			P2TrainingInfo.Text = TrainingInfoText(fighters[1], fighters[0]);
-		}
+            P1TrainingInfo.Text = TrainingInfoText(fighters[0], fighters[1]);
+            P2TrainingInfo.Text = TrainingInfoText(fighters[1], fighters[0]);
+        }
 
-		void GetFrameAdvantage(SakugaFighter[] fighters)
-		{
-			for (int i = 0; i < fighters.Length; i++)
-			{
-				if (fighters[i].Tracker.FrameAdvantage != 0)
-					CurrentFrameAdvantage = fighters[i].Tracker.FrameAdvantage;
-			}
-		}
+        void GetFrameAdvantage(SakugaActor[] fighters)
+        {
+            for (int i = 0; i < fighters.Length; i++)
+            {
+                if (fighters[i].Parameters.Tracker.FrameAdvantage != 0)
+                    CurrentFrameAdvantage = fighters[i].Parameters.Tracker.FrameAdvantage;
+            }
+        }
 
-		private string TrainingInfoText(SakugaFighter owner, SakugaFighter reference)
-		{
-			string hitTypeText = "";
+        private string TrainingInfoText(SakugaActor owner, SakugaActor reference)
+        {
+            string hitTypeText = "";
 
-			switch (reference.Tracker.LastHitType)
-			{
-				case 0:
-					hitTypeText = "HIGH";
-					break;
-				case 1:
-					hitTypeText = "MID";
-					break;
-				case 2:
-					hitTypeText = "LOW";
-					break;
-				case 3:
-					hitTypeText = "UNBLOCKABLE";
-					break;
-			}
+            switch (reference.Parameters.Tracker.LastHitType)
+            {
+                case 0:
+                    hitTypeText = "HIGH";
+                    break;
+                case 1:
+                    hitTypeText = "MID";
+                    break;
+                case 2:
+                    hitTypeText = "LOW";
+                    break;
+                case 3:
+                    hitTypeText = "UNBL.";
+                    break;
+            }
 
-			int finalFrameAdv = owner.Tracker.FrameAdvantage;// != 0 ? CurrentFrameAdvantage : CurrentFrameAdvantage;
+            int finalFrameAdv = owner.Parameters.Tracker.FrameAdvantage;// != 0 ? CurrentFrameAdvantage : CurrentFrameAdvantage;
 
-			string frameAdvantageInfo = finalFrameAdv >= 0 ?
-					("+" + finalFrameAdv) : "" + finalFrameAdv;
+            string frameAdvantageInfo = finalFrameAdv >= 0 ?
+                    ("+" + finalFrameAdv) : "" + finalFrameAdv;
 
-			string frameAdvText = "(" + frameAdvantageInfo + ")";
+            string frameAdvText = "(" + frameAdvantageInfo + ")";
 
-			FighterVariables vars = reference.Variables as FighterVariables;
-
-			return reference.Tracker.LastDamage + "\n" +
-					reference.Tracker.CurrentCombo + "\n" +
-					reference.Tracker.HighestCombo + "\n" +
-					hitTypeText + "\n" +
-					vars.CurrentDamageScaling + "%\n" +
-					owner.Tracker.FrameData + frameAdvText;
-		}
-	}
+            return reference.Parameters.Tracker.LastDamage + "\n" +
+                    reference.Parameters.Tracker.CurrentCombo + "\n" +
+                    reference.Parameters.Tracker.HighestCombo + "\n" +
+                    hitTypeText + "\n" +
+                    reference.Parameters.Prorations.CurrentDamageScaling + "%\n" +
+                    owner.Parameters.Tracker.FrameData + frameAdvText;
+        }
+    }
 }
