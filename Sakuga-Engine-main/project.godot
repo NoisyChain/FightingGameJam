@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Sakuga Engine"
 config/tags=PackedStringArray("game", "high_priority", "library")
 run/main_scene="uid://dn8hnj6b1vxko"
-config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 run/max_fps=60
 config/icon="res://Sprites/Icons/Icon_Fighter.png"
 
